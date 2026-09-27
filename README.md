@@ -2,48 +2,70 @@
 
 A premium, luxury Islamic wedding invitation website designed for mobile-first experience.
 
-## 🚀 Deployment to GitHub Pages
+## 🚀 Deployment to GitHub Pages - IMPORTANT
 
-### Method 1: Automatic Deployment (Recommended)
+### ⚠️ Fix for MIME Type Error
 
-This repository includes a GitHub Actions workflow that automatically builds and deploys to GitHub Pages.
+If you're seeing "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of application/octet-stream", follow these steps:
 
-**Steps:**
-1. Push your code to the `main` branch
-2. Go to your repository on GitHub
-3. Navigate to **Settings** → **Pages**
-4. Under **Source**, select **GitHub Actions**
-5. The workflow will automatically build and deploy on every push to `main`
+### Solution 1: Use GitHub Actions (Recommended)
 
-Your site will be available at: `https://ahmedelkholy8.github.io/SalamaWedding/`
-
-### Method 2: Manual Deployment
-
-If you prefer to deploy manually:
-
+1. **Push all files to your repository:**
 ```bash
-# Install dependencies
-npm install
-
-# Build the project
-npm run build
-
-# The built files will be in the 'dist' folder
-# Upload the contents of 'dist' to your gh-pages branch
+git add .
+git commit -m "Deploy wedding invitation"
+git push origin main
 ```
 
-### Method 3: Using gh-pages package
+2. **Enable GitHub Pages:**
+   - Go to your repository on GitHub
+   - Click **Settings** tab
+   - Click **Pages** in the left sidebar
+   - Under **Source**, select **GitHub Actions** (NOT "Deploy from a branch")
+   - The workflow will automatically build and deploy
+
+3. **Wait 1-2 minutes** for deployment to complete
+
+4. **Your site will be at:** `https://ahmedelkholy8.github.io/SalamaWedding/`
+
+### Solution 2: Manual Deployment with gh-pages
 
 ```bash
-# Install gh-pages
+# Install gh-pages package
 npm install -D gh-pages
 
-# Add to package.json scripts:
-# "deploy": "npm run build && gh-pages -d dist"
+# Add deploy script to package.json:
+# "scripts": {
+#   "deploy": "npm run build && gh-pages -d dist"
+# }
 
 # Deploy
 npm run deploy
 ```
+
+Then in GitHub Settings → Pages:
+- Source: **Deploy from a branch**
+- Branch: **gh-pages** / **root**
+
+### Solution 3: Check Your Current Setup
+
+If you already deployed but getting the error:
+
+1. **Verify GitHub Pages is enabled:**
+   - Go to Settings → Pages
+   - Make sure it shows "Your site is live at..."
+
+2. **Check the deployment source:**
+   - Should be either "GitHub Actions" OR "Deploy from a branch"
+   - NOT pointing to source files
+
+3. **Clear browser cache:**
+   - Hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+   - Or open in incognito/private window
+
+4. **Verify the URL:**
+   - Correct: `https://ahmedelkholy8.github.io/SalamaWedding/`
+   - NOT: `https://ahmedelkholy8.github.io/` (missing repo name)
 
 ## 📱 Features
 
