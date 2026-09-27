@@ -324,7 +324,7 @@ function InvitationContent() {
         <div className="absolute inset-0 islamic-pattern opacity-15" />
         <div className="light-rays opacity-30" />
 
-        <div className={`relative z-10 text-center max-w-md mx-auto transition-all duration-1000 delay-300 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`relative z-10 text-center max-w-md mx-auto w-full transition-all duration-1000 delay-300 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Top star ornament */}
           <div className="mb-6 flex justify-center">
             <svg width="80" height="50" viewBox="0 0 80 50" className="opacity-50">
@@ -374,10 +374,10 @@ function InvitationContent() {
       </section>
 
       {/* ===== COUPLE NAMES SECTION ===== */}
-      <section className="section-transition py-16 sm:py-24 px-6 relative">
-        <div className="max-w-md mx-auto text-center">
+      <section className="section-transition py-16 sm:py-24 px-6 relative flex flex-col items-center justify-center">
+        <div className="max-w-md mx-auto text-center w-full">
           {/* Invitation text */}
-          <p className="font-arabic-body text-base sm:text-lg text-[#1a3a2a] mb-12 leading-relaxed opacity-80">
+          <p className="font-arabic-body text-base sm:text-lg text-[#1a3a2a] mb-12 leading-relaxed opacity-80 text-center">
             {weddingData.invitationText}
           </p>
 
@@ -408,8 +408,8 @@ function InvitationContent() {
       </section>
 
       {/* ===== WEDDING DETAILS SECTION ===== */}
-      <section className="section-transition py-16 px-6 relative">
-        <div className="max-w-md mx-auto">
+      <section className="section-transition py-16 px-6 relative flex flex-col items-center justify-center">
+        <div className="max-w-md mx-auto w-full">
           <h3 className="text-center font-arabic-display text-2xl sm:text-3xl gold-text mb-10">
             تفاصيل الزفاف
           </h3>
@@ -425,7 +425,7 @@ function InvitationContent() {
                   <line x1="3" y1="10" x2="21" y2="10" />
                 </svg>
               </div>
-              <div className="text-right">
+              <div className="text-center flex-1">
                 <p className="text-xs text-[#1a3a2a] opacity-50 font-arabic-body mb-0.5">التاريخ</p>
                 <p className="text-lg font-english-luxury text-[#1a3a2a] font-medium">{weddingData.dateFormatted}</p>
               </div>
@@ -439,7 +439,7 @@ function InvitationContent() {
                   <path d="M12 6v6l4 2" />
                 </svg>
               </div>
-              <div className="text-right">
+              <div className="text-center flex-1">
                 <p className="text-xs text-[#1a3a2a] opacity-50 font-arabic-body mb-0.5">اليوم</p>
                 <p className="text-lg font-arabic-body text-[#1a3a2a] font-semibold">{weddingData.arabicDay}</p>
               </div>
@@ -453,7 +453,7 @@ function InvitationContent() {
                   <polyline points="12,6 12,12 16,14" />
                 </svg>
               </div>
-              <div className="text-right">
+              <div className="text-center flex-1">
                 <p className="text-xs text-[#1a3a2a] opacity-50 font-arabic-body mb-0.5">الوقت</p>
                 <p className="text-lg font-english-elegant text-[#1a3a2a]">{weddingData.time}</p>
               </div>
@@ -467,7 +467,7 @@ function InvitationContent() {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
-              <div className="text-right">
+              <div className="text-center flex-1">
                 <p className="text-xs text-[#1a3a2a] opacity-50 font-arabic-body mb-0.5">القاعة</p>
                 <p className="text-lg font-arabic-body text-[#1a3a2a] font-semibold">{weddingData.venue}</p>
               </div>
@@ -477,9 +477,9 @@ function InvitationContent() {
       </section>
 
       {/* ===== COUNTDOWN SECTION ===== */}
-      <section className="section-transition py-16 px-4 relative">
-        <div className="max-w-md mx-auto text-center">
-          <h3 className="font-arabic-display text-xl sm:text-2xl gold-text mb-8 leading-relaxed">
+      <section className="section-transition py-16 px-4 relative flex flex-col items-center justify-center">
+        <div className="max-w-md mx-auto text-center w-full">
+          <h3 className="font-arabic-display text-xl sm:text-2xl gold-text mb-8 leading-relaxed text-center">
             لم يتبقَ على فرحتنا سوى
           </h3>
           <Countdown />
@@ -487,12 +487,12 @@ function InvitationContent() {
       </section>
 
       {/* ===== VENUE SECTION ===== */}
-      <section className="section-transition py-16 px-6 relative">
-        <div className="max-w-md mx-auto text-center">
+      <section className="section-transition py-16 px-6 relative flex flex-col items-center justify-center">
+        <div className="max-w-md mx-auto text-center w-full">
           <div className="glass-card p-8 sm:p-10 relative overflow-hidden luxury-shadow">
             <div className="absolute inset-0 islamic-pattern opacity-8" />
             
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-col items-center justify-center">
               <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-[rgba(201,168,76,0.08)] flex items-center justify-center border border-[rgba(201,168,76,0.15)]">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" strokeWidth="1.5">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -500,8 +500,8 @@ function InvitationContent() {
                 </svg>
               </div>
               
-              <p className="text-sm text-[#1a3a2a] opacity-50 font-arabic-body mb-2">القاعة</p>
-              <h3 className="text-3xl sm:text-4xl font-arabic-display text-[#1a3a2a] mb-8">{weddingData.venue}</h3>
+              <p className="text-sm text-[#1a3a2a] opacity-50 font-arabic-body mb-2 text-center">القاعة</p>
+              <h3 className="text-3xl sm:text-4xl font-arabic-display text-[#1a3a2a] mb-8 text-center">{weddingData.venue}</h3>
               
               <a
                 href={weddingData.venueMapUrl}
@@ -523,33 +523,35 @@ function InvitationContent() {
       </section>
 
       {/* ===== RSVP SECTION ===== */}
-      <section className="section-transition py-16 px-6 relative">
-        <div className="max-w-md mx-auto text-center">
+      <section className="section-transition py-16 px-6 relative flex flex-col items-center justify-center">
+        <div className="max-w-md mx-auto text-center w-full">
           <OrnamentDivider />
           
-          <h3 className="font-arabic-display text-2xl sm:text-3xl gold-text mb-4">
+          <h3 className="font-arabic-display text-2xl sm:text-3xl gold-text mb-4 text-center">
             يشرفنا حضوركم
           </h3>
-          <p className="font-arabic-body text-[#1a3a2a] opacity-60 mb-10 text-base leading-relaxed">
+          <p className="font-arabic-body text-[#1a3a2a] opacity-60 mb-10 text-base leading-relaxed text-center">
             نتشرف بدعوتكم ومشاركتنا أجمل لحظات العمر
           </p>
           
-          <a
-            href={weddingData.rsvpUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button inline-block"
-          >
-            تأكيد الحضور
-          </a>
+          <div className="flex justify-center">
+            <a
+              href={weddingData.rsvpUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button inline-block"
+            >
+              تأكيد الحضور
+            </a>
+          </div>
           
           <OrnamentDivider />
         </div>
       </section>
 
       {/* ===== CLOSING SECTION ===== */}
-      <section className="section-transition py-20 px-6 relative">
-        <div className="max-w-md mx-auto text-center">
+      <section className="section-transition py-20 px-6 relative flex flex-col items-center justify-center">
+        <div className="max-w-md mx-auto text-center w-full">
           {/* Decorative top */}
           <div className="mb-8 flex justify-center opacity-40">
             <svg width="60" height="60" viewBox="0 0 60 60">
@@ -559,17 +561,17 @@ function InvitationContent() {
             </svg>
           </div>
           
-          <p className="font-arabic-display text-xl sm:text-2xl text-[#1a3a2a] mb-8 leading-relaxed">
+          <p className="font-arabic-display text-xl sm:text-2xl text-[#1a3a2a] mb-8 leading-relaxed text-center">
             {weddingData.closingDua}
           </p>
           
-          <p className="font-arabic-body text-base text-[#1a3a2a] opacity-60 mb-10">
+          <p className="font-arabic-body text-base text-[#1a3a2a] opacity-60 mb-10 text-center">
             {weddingData.closingInvite}
           </p>
           
-          <div className="py-8 relative">
+          <div className="py-8 relative flex justify-center">
             <div className="absolute inset-0 border border-[rgba(201,168,76,0.1)] rounded-2xl" />
-            <h3 className="font-english-luxury text-2xl sm:text-3xl gold-text relative z-10 py-4 px-6">
+            <h3 className="font-english-luxury text-2xl sm:text-3xl gold-text relative z-10 py-4 px-6 text-center">
               {weddingData.groom} & {weddingData.bride}
             </h3>
           </div>
@@ -586,8 +588,8 @@ function InvitationContent() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 text-center opacity-30">
-        <p className="text-xs text-[#1a3a2a] font-english-elegant tracking-wider">
+      <footer className="py-10 text-center opacity-30 flex flex-col items-center justify-center">
+        <p className="text-xs text-[#1a3a2a] font-english-elegant tracking-wider text-center">
           With Love • Mohamed & F
         </p>
         <div className="mt-3 flex justify-center">
