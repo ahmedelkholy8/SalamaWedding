@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/SalamaWedding/",
+  base: process.env.NODE_ENV === "production" ? "/SalamaWedding/" : "/",
   server: {
     host: "0.0.0.0",
     port: 3000,
