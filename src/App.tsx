@@ -522,33 +522,6 @@ function InvitationContent() {
         </div>
       </section>
 
-      {/* ===== RSVP SECTION ===== */}
-      <section className="section-transition py-16 px-6 relative flex flex-col items-center justify-center">
-        <div className="max-w-md mx-auto text-center w-full">
-          <OrnamentDivider />
-          
-          <h3 className="font-arabic-display text-2xl sm:text-3xl gold-text mb-4 text-center">
-            يشرفنا حضوركم
-          </h3>
-          <p className="font-arabic-body text-[#1a3a2a] opacity-60 mb-10 text-base leading-relaxed text-center">
-            نتشرف بدعوتكم ومشاركتنا أجمل لحظات العمر
-          </p>
-          
-          <div className="flex justify-center">
-            <a
-              href={weddingData.rsvpUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button inline-block"
-            >
-              تأكيد الحضور
-            </a>
-          </div>
-          
-          <OrnamentDivider />
-        </div>
-      </section>
-
       {/* ===== CLOSING SECTION ===== */}
       <section className="section-transition py-20 px-6 relative flex flex-col items-center justify-center">
         <div className="max-w-md mx-auto text-center w-full">
