@@ -8,7 +8,7 @@ export const weddingData = {
   day: "Saturday",
   arabicDay: "السبت",
   time: "6:30 PM – 11:00 PM",
-  venue: "فيلا سعودي",
+  venue: "فيلا سعودي قاعة رويال",
   venueMapUrl: "https://maps.app.goo.gl/ni1EdLp5MiYtDmy4A?g_st=awb",
   rsvpUrl: "https://wa.me/",
   bismillah: "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
