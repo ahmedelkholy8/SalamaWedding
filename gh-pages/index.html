@@ -6,516 +6,437 @@
     <meta name="theme-color" content="#071E18">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
     <title>محمد & F | دعوة زفاف</title>
     <meta name="description" content="يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F يوم 10 أكتوبر 2026">
-    
-    <meta property="og:type" content="website">
     <meta property="og:title" content="محمد & F | دعوة زفاف">
     <meta property="og:description" content="يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F يوم 10 أكتوبر 2026">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23071E18' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='65' font-family='serif' font-size='40' font-weight='bold' fill='%23C6A15B' text-anchor='middle'%3EM%26F%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23071E18' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='65' font-family='serif' font-size='40' font-weight='bold' fill='%23C6A15B' text-anchor='middle'%3EM%26F%3C/text%3E%3C/svg%3E">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --emerald-950: #071E18;
-            --emerald-900: #0B3027;
-            --emerald-800: #0F4A3B;
-            --gold: #C6A15B;
-            --gold-light: #E4C878;
-            --gold-muted: #9E834A;
-            --ivory: #F5F0E6;
-            --font-arabic-display: 'Amiri', serif;
-            --font-arabic-body: 'Noto Naskh Arabic', serif;
-            --font-english-display: 'Cormorant Garamond', serif;
+        *{margin:0;padding:0;box-sizing:border-box}
+        html,body{width:100%;overflow-x:hidden}
+        body{
+            font-family:'Noto Naskh Arabic','Amiri',serif;
+            background:#071E18;
+            color:#F5F0E6;
+            line-height:1.6;
+            min-height:100vh;
+            min-height:100dvh;
+            -webkit-font-smoothing:antialiased;
         }
         
-        html, body {
-            width: 100%;
-            max-width: 100vw;
-            overflow-x: hidden;
-            position: relative;
+        .container{max-width:500px;margin:0 auto;padding:0 20px}
+        
+        /* Opening Screen */
+        .opening{
+            position:fixed;inset:0;z-index:1000;
+            background:#071E18;
+            display:flex;flex-direction:column;align-items:center;justify-content:center;
+            transition:opacity 0.6s ease;
+        }
+        .opening.hidden{opacity:0;pointer-events:none}
+        
+        .opening-content{text-align:center;padding:20px}
+        
+        .bismillah-circle{
+            width:100px;height:100px;
+            border:2px solid #C6A15B;
+            border-radius:50%;
+            display:flex;align-items:center;justify-content:center;
+            margin:0 auto 30px;
+        }
+        .bismillah-circle span{font-family:'Amiri',serif;font-size:2rem;color:#C6A15B}
+        
+        .initials{margin:30px 0}
+        .initials h1{
+            font-family:Georgia,serif;
+            font-size:4rem;font-weight:300;
+            color:#C6A15B;letter-spacing:0.1em;
+            margin:10px 0;
+        }
+        .initials .amp{color:#E4C878;font-size:1.5rem}
+        
+        .opening-text{margin:20px 0 30px}
+        .opening-text p{font-family:'Amiri',serif;margin:8px 0}
+        .opening-text .title{font-size:1.3rem;color:#F5F0E6}
+        .opening-text .names{font-size:1.1rem;color:#E4C878}
+        
+        .btn{
+            background:transparent;
+            border:1px solid #C6A15B;
+            color:#E4C878;
+            padding:14px 40px;
+            border-radius:50px;
+            font-family:'Noto Naskh Arabic',serif;
+            font-size:1rem;font-weight:500;
+            cursor:pointer;
+            transition:all 0.3s ease;
+        }
+        .btn:active{transform:scale(0.95)}
+        .btn small{display:block;font-size:0.7rem;margin-top:4px;opacity:0.7;letter-spacing:0.15em}
+        
+        /* Main Content */
+        .main{display:none;padding:20px 0}
+        .main.show{display:block}
+        
+        section{padding:60px 0;text-align:center}
+        
+        .gold-text{color:#C6A15B}
+        .gold-light{color:#E4C878}
+        .gold-muted{color:#9E834A}
+        
+        .font-display{font-family:'Amiri',serif}
+        .font-body{font-family:'Noto Naskh Arabic',serif}
+        .font-english{font-family:Georgia,serif}
+        
+        /* Cards */
+        .card{
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(198,161,91,0.2);
+            border-radius:16px;
+            padding:24px;
+            margin:16px 0;
         }
         
-        body {
-            font-family: var(--font-arabic-body);
-            background-color: var(--emerald-950);
-            color: var(--ivory);
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
-            min-height: 100vh;
-            min-height: 100dvh;
+        /* Divider */
+        .divider{
+            display:flex;align-items:center;justify-content:center;
+            margin:30px 0;
+        }
+        .divider .line{
+            height:1px;width:100px;
+            background:linear-gradient(90deg,transparent,#C6A15B,transparent);
+            opacity:0.4;
+        }
+        .divider .star{margin:0 15px;color:#C6A15B;opacity:0.6}
+        
+        /* Monogram */
+        .monogram{
+            width:100px;height:100px;
+            border:1px solid rgba(198,161,91,0.4);
+            border-radius:50%;
+            display:flex;align-items:center;justify-content:center;
+            margin:30px auto;
+            position:relative;
+        }
+        .monogram::before{
+            content:'';position:absolute;inset:8px;
+            border:1px solid rgba(198,161,91,0.2);
+            border-radius:50%;
+        }
+        .monogram span{
+            font-family:Georgia,serif;
+            font-size:1.5rem;font-weight:300;
+            color:#C6A15B;letter-spacing:0.1em;
         }
         
-        .bg-layered {
-            background: 
-                radial-gradient(ellipse at 20% 0%, rgba(198, 161, 91, 0.03) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 100%, rgba(198, 161, 91, 0.03) 0%, transparent 50%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C6A15B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-                radial-gradient(ellipse at center, var(--emerald-900) 0%, var(--emerald-950) 70%),
-                var(--emerald-950);
+        /* Names */
+        .couple-names{margin:40px 0}
+        .couple-names h2{
+            font-family:Georgia,serif;
+            font-size:2.5rem;font-weight:300;
+            color:#C6A15B;letter-spacing:0.08em;
+            margin:15px 0;
+        }
+        .couple-names .amp{font-size:2rem;color:#E4C878}
+        
+        /* Details */
+        .detail-card{
+            display:flex;align-items:center;gap:16px;
+            text-align:right;
+        }
+        .detail-card .icon{color:#C6A15B;flex-shrink:0}
+        .detail-card .info{flex:1}
+        .detail-card .label{font-size:0.85rem;color:#9E834A;margin-bottom:4px}
+        .detail-card .value{font-size:1.2rem;color:#F5F0E6}
+        .detail-card .value-en{font-family:Georgia,serif}
+        
+        /* Countdown */
+        .countdown-grid{
+            display:grid;grid-template-columns:repeat(4,1fr);
+            gap:10px;max-width:400px;margin:0 auto;
+        }
+        .countdown-item{
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(198,161,91,0.2);
+            border-radius:12px;
+            padding:16px 8px;
+            text-align:center;
+        }
+        .countdown-num{
+            font-family:Georgia,serif;
+            font-size:2rem;font-weight:300;
+            color:#E4C878;line-height:1;
+        }
+        .countdown-label{
+            font-size:0.7rem;color:#9E834A;
+            margin-top:6px;
         }
         
-        .gold-metallic {
-            background: linear-gradient(135deg, #8F7137 0%, #C6A15B 25%, #E4C878 50%, #C6A15B 75%, #8F7137 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: goldShimmer 6s ease-in-out infinite;
+        /* Timeline */
+        .timeline{max-width:300px;margin:0 auto;text-align:right}
+        .timeline-item{
+            position:relative;
+            padding-right:30px;padding-bottom:25px;
+            border-right:1px solid rgba(198,161,91,0.2);
+        }
+        .timeline-item::before{
+            content:'';position:absolute;
+            right:-5px;top:5px;
+            width:9px;height:9px;
+            border-radius:50%;
+            background:#C6A15B;
+            box-shadow:0 0 8px rgba(198,161,91,0.5);
+        }
+        .timeline-item:last-child{border-right:none;padding-bottom:0}
+        .timeline-item .time{
+            font-family:Georgia,serif;
+            font-size:1.1rem;color:#E4C878;
+            margin-bottom:4px;
+        }
+        .timeline-item .event{color:#F5F0E6}
+        
+        /* Venue */
+        .venue-card{text-align:center}
+        .venue-card .icon{color:#C6A15B;margin-bottom:15px}
+        .venue-card h4{font-family:'Amiri',serif;font-size:1.5rem;color:#F5F0E6;margin-bottom:8px}
+        .venue-card p{color:#E4C878}
+        
+        /* Buttons */
+        .btn-link{
+            display:inline-flex;align-items:center;gap:8px;
+            background:transparent;
+            border:1px solid #C6A15B;
+            color:#E4C878;
+            padding:12px 28px;
+            border-radius:50px;
+            font-family:'Noto Naskh Arabic',serif;
+            font-size:1rem;
+            text-decoration:none;
+            transition:all 0.3s ease;
+        }
+        .btn-link:active{transform:scale(0.95)}
+        
+        /* Floating Buttons */
+        .float-btn{
+            position:fixed;bottom:20px;
+            width:50px;height:50px;
+            border-radius:50%;
+            background:rgba(7,30,24,0.9);
+            border:1px solid rgba(198,161,91,0.3);
+            display:flex;align-items:center;justify-content:center;
+            cursor:pointer;z-index:100;
+            transition:all 0.3s ease;
+        }
+        .float-btn:active{transform:scale(0.9)}
+        .music-btn{left:20px}
+        .share-btn{right:20px}
+        .float-btn svg{color:#C6A15B}
+        
+        .music-btn.playing{animation:pulse 2s ease-in-out infinite}
+        @keyframes pulse{
+            0%,100%{box-shadow:0 0 0 0 rgba(198,161,91,0.4)}
+            50%{box-shadow:0 0 0 10px rgba(198,161,91,0)}
         }
         
-        @keyframes goldShimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        /* Footer */
+        footer{padding:30px 20px;text-align:center;opacity:0.4}
+        footer p{font-size:0.75rem;color:#9E834A;letter-spacing:0.1em}
+        
+        /* Responsive */
+        @media(max-width:360px){
+            .initials h1{font-size:3rem}
+            .couple-names h2{font-size:2rem}
+            .countdown-num{font-size:1.5rem}
         }
         
-        .glass-card {
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(198, 161, 91, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        @media(min-width:768px){
+            .container{max-width:600px}
+            section{padding:80px 0}
         }
-        
-        .btn-gold {
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold-light);
-            padding: 14px 32px;
-            border-radius: 100px;
-            font-family: var(--font-arabic-body);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(198, 161, 91, 0.1);
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-gold:hover, .btn-gold:focus {
-            border-color: var(--gold-light);
-            box-shadow: 0 0 30px rgba(198, 161, 91, 0.25);
-            transform: translateY(-2px);
-        }
-        
-        .btn-gold:active {
-            transform: translateY(0) scale(0.98);
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .particle {
-            position: fixed;
-            width: 2px;
-            height: 2px;
-            background: var(--gold);
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0;
-            animation: particleFloat linear infinite;
-        }
-        
-        @keyframes particleFloat {
-            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.6; }
-            100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
-        }
-        
-        .islamic-arch { position: relative; }
-        
-        .islamic-arch::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 60px;
-            border: 1px solid rgba(198, 161, 91, 0.3);
-            border-radius: 60px 60px 0 0;
-            border-bottom: none;
-        }
-        
-        .gold-line {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, transparent);
-            opacity: 0.4;
-        }
-        
-        .countdown-digit {
-            font-family: var(--font-english-display);
-            font-size: clamp(2.5rem, 8vw, 3.5rem);
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            line-height: 1;
-            background: linear-gradient(180deg, var(--gold-light), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .countdown-label {
-            font-family: var(--font-arabic-body);
-            font-size: 0.75rem;
-            color: var(--gold-muted);
-            margin-top: 8px;
-        }
-        
-        .monogram-frame {
-            width: 100px;
-            height: 100px;
-            border: 1px solid rgba(198, 161, 91, 0.4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin: 2rem auto;
-        }
-        
-        .monogram-frame::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 1px solid rgba(198, 161, 91, 0.2);
-            border-radius: 50%;
-        }
-        
-        .monogram-text {
-            font-family: var(--font-english-display);
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            color: var(--gold);
-        }
-        
-        .music-btn, .share-btn {
-            position: fixed;
-            bottom: 24px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(7, 30, 24, 0.8);
-            border: 1px solid rgba(198, 161, 91, 0.3);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 100;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .music-btn { left: 24px; }
-        .share-btn { right: 24px; }
-        
-        .music-btn:hover, .share-btn:hover {
-            border-color: var(--gold);
-            transform: scale(1.05);
-        }
-        
-        .music-btn.playing {
-            animation: musicPulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes musicPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(198, 161, 91, 0.4); }
-            50% { box-shadow: 0 0 0 12px rgba(198, 161, 91, 0); }
-        }
-        
-        .opening-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: var(--emerald-950);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
-        }
-        
-        .opening-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-right: 32px;
-            padding-bottom: 32px;
-            border-right: 1px solid rgba(198, 161, 91, 0.2);
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            right: -5px;
-            top: 4px;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--gold);
-            box-shadow: 0 0 10px rgba(198, 161, 91, 0.5);
-        }
-        
-        .timeline-item:last-child {
-            border-right: none;
-            padding-bottom: 0;
-        }
-        
-        section {
-            padding: clamp(3rem, 8vh, 5rem) 1.5rem;
-        }
-        
-        .content-wrapper {
-            max-width: 480px;
-            margin: 0 auto;
-        }
-        
-        .font-arabic-display { font-family: var(--font-arabic-display); }
-        .font-arabic-body { font-family: var(--font-arabic-body); }
-        .font-english-display { font-family: var(--font-english-display); }
-        
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: var(--emerald-950); }
-        ::-webkit-scrollbar-thumb { background: var(--gold-muted); border-radius: 2px; }
     </style>
 </head>
 <body>
-    <audio id="weddingMusic" loop preload="none">
+    <audio id="audio" loop preload="none">
         <source src="./song.mp3" type="audio/mpeg">
     </audio>
     
     <!-- Opening Screen -->
-    <div class="opening-screen" id="openingScreen">
-        <div id="particles" style="position: fixed; inset: 0; pointer-events: none; overflow: hidden;"></div>
-        
-        <div style="position: relative; z-index: 10; text-align: center; padding: 1.5rem;">
-            <div class="islamic-arch" style="margin-bottom: 2rem;">
-                <div style="width: 96px; height: 96px; margin: 0 auto 1.5rem; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <span class="font-arabic-display" style="font-size: 1.875rem;">﷽</span>
-                </div>
+    <div class="opening" id="opening">
+        <div class="opening-content">
+            <div class="bismillah-circle">
+                <span>﷽</span>
             </div>
             
-            <div style="margin-bottom: 2rem;">
-                <h1 class="font-english-display gold-metallic" style="font-size: 3.75rem; font-weight: 300; letter-spacing: 0.1em; margin-bottom: 0.5rem;">M</h1>
-                <p style="color: var(--gold); font-size: 1.5rem; font-weight: 300; margin: 0.5rem 0;">&</p>
-                <h1 class="font-english-display gold-metallic" style="font-size: 3.75rem; font-weight: 300; letter-spacing: 0.1em;">F</h1>
+            <div class="initials">
+                <h1>M</h1>
+                <p class="amp">&</p>
+                <h1>F</h1>
             </div>
             
-            <p class="font-arabic-display" style="font-size: 1.25rem; color: var(--ivory); margin-bottom: 0.5rem;">دعوة زفاف</p>
-            <p class="font-arabic-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 2rem;">محمد & F</p>
+            <div class="opening-text">
+                <p class="title">دعوة زفاف</p>
+                <p class="names">محمد & F</p>
+            </div>
             
-            <button id="openBtn" class="btn-gold">
-                <span style="display: block;">افتح الدعوة</span>
-                <span style="display: block; font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.7; font-family: var(--font-english-display); letter-spacing: 0.2em;">OPEN INVITATION</span>
+            <button class="btn" id="openBtn">
+                افتح الدعوة
+                <small>OPEN INVITATION</small>
             </button>
         </div>
     </div>
     
     <!-- Main Content -->
-    <div id="mainContent" class="bg-layered" style="display: none; min-height: 100vh; position: relative;">
-        <!-- Bismillah Section -->
-        <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div class="content-wrapper" style="text-align: center;">
-                <h1 class="font-arabic-display gold-metallic reveal" style="font-size: clamp(1.875rem, 5vw, 2.25rem); margin-bottom: 2rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h1>
+    <div class="main" id="main">
+        <div class="container">
+            
+            <!-- Bismillah -->
+            <section>
+                <h1 class="font-display gold-text" style="font-size:1.8rem;margin-bottom:30px">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h1>
                 
-                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
-                    <div class="gold-line" style="width: 8rem;"></div>
-                    <div style="margin: 0 1rem;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
-                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                <div class="divider">
+                    <div class="line"></div>
+                    <span class="star">✦</span>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="card">
+                    <p class="font-display" style="font-size:1.2rem;line-height:2;margin-bottom:12px">ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة</p>
+                    <p class="font-display gold-muted" style="font-size:0.9rem">سورة الروم - آية ٢١</p>
+                </div>
+                
+                <div class="divider">
+                    <div class="line"></div>
+                    <span class="star">✦</span>
+                    <div class="line"></div>
+                </div>
+                
+                <p class="font-body" style="font-size:1.1rem;opacity:0.9;margin-top:20px">بكل حب وسعادة، يسعدنا دعوتكم لمشاركتنا فرحة زفافنا</p>
+            </section>
+            
+            <!-- Couple Names -->
+            <section>
+                <div class="monogram"><span>M & F</span></div>
+                
+                <div class="couple-names">
+                    <h2>Mohamed Salama</h2>
+                    <p class="amp">&</p>
+                    <h2>F</h2>
+                </div>
+                
+                <div class="divider">
+                    <div class="line"></div>
+                    <span class="star">✦</span>
+                    <div class="line"></div>
+                </div>
+            </section>
+            
+            <!-- Wedding Details -->
+            <section>
+                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">تفاصيل الزفاف</h3>
+                
+                <div class="card detail-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
                     </div>
-                    <div class="gold-line" style="width: 8rem;"></div>
+                    <div class="info">
+                        <p class="label">التاريخ</p>
+                        <p class="value value-en">10 / 10 / 2026</p>
+                    </div>
                 </div>
                 
-                <div class="glass-card reveal" style="padding: 2rem; margin: 2rem 0;">
-                    <p class="font-arabic-display" style="font-size: clamp(1.25rem, 4vw, 1.5rem); color: var(--ivory); line-height: 2; margin-bottom: 1rem;">ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة</p>
-                    <p class="font-arabic-display" style="font-size: 0.875rem; color: var(--gold-muted);">سورة الروم - آية ٢١</p>
-                </div>
-                
-                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
-                    <div class="gold-line" style="width: 8rem;"></div>
-                    <div style="margin: 0 1rem;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
-                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                <div class="card detail-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
                         </svg>
                     </div>
-                    <div class="gold-line" style="width: 8rem;"></div>
+                    <div class="info">
+                        <p class="label">اليوم</p>
+                        <p class="value">السبت</p>
+                    </div>
                 </div>
                 
-                <p class="font-arabic-body reveal" style="font-size: 1.125rem; color: var(--ivory); opacity: 0.9; margin-bottom: 2rem;">بكل حب وسعادة، يسعدنا دعوتكم لمشاركتنا فرحة زفافنا</p>
-            </div>
-        </section>
-        
-        <!-- Couple Names -->
-        <section class="reveal">
-            <div class="content-wrapper" style="text-align: center;">
-                <div class="monogram-frame">
-                    <span class="monogram-text">M & F</span>
-                </div>
-                
-                <div style="margin: 3rem 0;">
-                    <h2 class="font-english-display gold-metallic" style="font-size: clamp(2.25rem, 6vw, 3rem); font-weight: 300; letter-spacing: 0.1em; margin-bottom: 1rem;">Mohamed Salama</h2>
-                    <p style="color: var(--gold); font-size: 1.875rem; margin: 1rem 0;">&</p>
-                    <h2 class="font-english-display gold-metallic" style="font-size: clamp(2.25rem, 6vw, 3rem); font-weight: 300; letter-spacing: 0.1em;">F</h2>
-                </div>
-                
-                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
-                    <div class="gold-line" style="width: 8rem;"></div>
-                    <div style="margin: 0 1rem;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
-                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                <div class="card detail-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
                         </svg>
                     </div>
-                    <div class="gold-line" style="width: 8rem;"></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Wedding Details -->
-        <section class="reveal">
-            <div class="content-wrapper">
-                <h3 class="font-arabic-display gold-metallic" style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">تفاصيل الزفاف</h3>
-                
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="color: var(--gold);">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6"/>
-                                <line x1="8" y1="2" x2="8" y2="6"/>
-                                <line x1="3" y1="10" x2="21" y2="10"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">التاريخ</p>
-                            <p class="font-english-display" style="font-size: 1.25rem; color: var(--ivory);">10 / 10 / 2026</p>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="color: var(--gold);">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 6v6l4 2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">اليوم</p>
-                            <p class="font-arabic-body" style="font-size: 1.25rem; color: var(--ivory);">السبت</p>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="color: var(--gold);">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12,6 12,12 16,14"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">الوقت</p>
-                            <p class="font-english-display" style="font-size: 1.25rem; color: var(--ivory);">6:30 PM – 11:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="color: var(--gold);">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">القاعة</p>
-                            <p class="font-arabic-body" style="font-size: 1.25rem; color: var(--ivory);">فيلا سعودي - قاعة رويال</p>
-                        </div>
+                    <div class="info">
+                        <p class="label">الوقت</p>
+                        <p class="value value-en">6:30 PM – 11:00 PM</p>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <!-- Countdown -->
-        <section class="reveal">
-            <div class="content-wrapper" style="text-align: center;">
-                <h3 class="font-arabic-display gold-metallic" style="font-size: 1.5rem; margin-bottom: 2rem;">لم يتبقَ على فرحتنا سوى</h3>
-                <div id="countdown" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; max-width: 24rem; margin: 0 auto;"></div>
-            </div>
-        </section>
-        
-        <!-- Timeline -->
-        <section class="reveal">
-            <div class="content-wrapper">
-                <h3 class="font-arabic-display gold-metallic" style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">موعدنا</h3>
                 
-                <div style="max-width: 24rem; margin: 0 auto;">
-                    <div class="timeline-item">
-                        <p class="font-english-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 0.25rem;">6:30 PM</p>
-                        <p class="font-arabic-body" style="color: var(--ivory);">استقبال الضيوف</p>
-                    </div>
-                    <div class="timeline-item">
-                        <p class="font-english-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 0.25rem;">7:00 PM</p>
-                        <p class="font-arabic-body" style="color: var(--ivory);">حفل الزفاف</p>
-                    </div>
-                    <div class="timeline-item">
-                        <p class="font-english-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 0.25rem;">11:00 PM</p>
-                        <p class="font-arabic-body" style="color: var(--ivory);">ختام الحفل</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Venue -->
-        <section class="reveal">
-            <div class="content-wrapper" style="text-align: center;">
-                <h3 class="font-arabic-display gold-metallic" style="font-size: 1.5rem; margin-bottom: 2rem;">مكان الاحتفال</h3>
-                
-                <div class="glass-card" style="padding: 2rem; margin-bottom: 1.5rem;">
-                    <div style="color: var(--gold); margin-bottom: 1rem; display: flex; justify-content: center;">
+                <div class="card detail-card">
+                    <div class="icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <h4 class="font-arabic-display" style="font-size: 1.5rem; color: var(--ivory); margin-bottom: 0.5rem;">فيلا سعودي</h4>
-                    <p class="font-arabic-body" style="color: var(--gold-light);">قاعة رويال</p>
+                    <div class="info">
+                        <p class="label">القاعة</p>
+                        <p class="value">فيلا سعودي - قاعة رويال</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Countdown -->
+            <section>
+                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">لم يتبقَ على فرحتنا سوى</h3>
+                <div class="countdown-grid" id="countdown"></div>
+            </section>
+            
+            <!-- Timeline -->
+            <section>
+                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">موعدنا</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <p class="time">6:30 PM</p>
+                        <p class="event">استقبال الضيوف</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">7:00 PM</p>
+                        <p class="event">حفل الزفاف</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="time">11:00 PM</p>
+                        <p class="event">ختام الحفل</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Venue -->
+            <section>
+                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">مكان الاحتفال</h3>
+                
+                <div class="card venue-card">
+                    <div class="icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h4>فيلا سعودي</h4>
+                    <p>قاعة رويال</p>
                 </div>
                 
-                <a href="https://maps.app.goo.gl/ni1EdLp5MiYtDmy4A?g_st=awb" target="_blank" rel="noopener noreferrer" class="btn-gold" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                <a href="https://maps.app.goo.gl/ni1EdLp5MiYtDmy4A?g_st=awb" target="_blank" rel="noopener" class="btn-link" style="margin-top:20px">
                     <span>الموقع على الخريطة</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -523,219 +444,131 @@
                         <line x1="10" y1="14" x2="21" y2="3"/>
                     </svg>
                 </a>
-            </div>
-        </section>
-        
-
-        
-        <!-- Closing -->
-        <section class="reveal">
-            <div class="content-wrapper" style="text-align: center;">
-                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
-                    <div class="gold-line" style="width: 8rem;"></div>
-                    <div style="margin: 0 1rem;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
-                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
-                        </svg>
-                    </div>
-                    <div class="gold-line" style="width: 8rem;"></div>
+            </section>
+            
+            <!-- Closing -->
+            <section>
+                <div class="divider">
+                    <div class="line"></div>
+                    <span class="star">✦</span>
+                    <div class="line"></div>
                 </div>
                 
-                <p class="font-arabic-display" style="font-size: 1.25rem; color: var(--ivory); margin-bottom: 1.5rem; line-height: 2;">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
+                <p class="font-display" style="font-size:1.2rem;line-height:2;margin-bottom:20px">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
                 
-                <p class="font-arabic-body" style="color: var(--ivory); opacity: 0.8; margin-bottom: 2rem;">نسعد بمشاركتكم فرحتنا</p>
+                <p class="font-body" style="opacity:0.8;margin-bottom:30px">نسعد بمشاركتكم فرحتنا</p>
                 
-                <div class="monogram-frame">
-                    <span class="monogram-text">M & F</span>
+                <div class="monogram"><span>M & F</span></div>
+                
+                <div class="divider">
+                    <div class="line"></div>
+                    <span class="star">✦</span>
+                    <div class="line"></div>
                 </div>
-                
-                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
-                    <div class="gold-line" style="width: 8rem;"></div>
-                    <div style="margin: 0 1rem;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
-                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
-                        </svg>
-                    </div>
-                    <div class="gold-line" style="width: 8rem;"></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Footer -->
-        <footer style="padding: 2rem; text-align: center; opacity: 0.4;">
-            <p style="font-size: 0.75rem; color: var(--gold-muted); font-family: var(--font-english-display); letter-spacing: 0.15em;">With Love • Mohamed & F</p>
-        </footer>
+            </section>
+            
+            <footer>
+                <p>With Love • Mohamed & F</p>
+            </footer>
+        </div>
     </div>
     
     <!-- Music Button -->
-    <button id="musicBtn" class="music-btn" style="display: none;" aria-label="تشغيل الموسيقى">
-        <span style="color: var(--gold);" id="musicIcon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9 18V5l12-2v13"/>
-                <circle cx="6" cy="18" r="3"/>
-                <circle cx="18" cy="16" r="3"/>
-            </svg>
-        </span>
+    <button class="float-btn music-btn" id="musicBtn" style="display:none">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+        </svg>
     </button>
     
     <!-- Share Button -->
-    <button id="shareBtn" class="share-btn" style="display: none;" aria-label="مشاركة الدعوة">
-        <span style="color: var(--gold);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="18" cy="5" r="3"/>
-                <circle cx="6" cy="12" r="3"/>
-                <circle cx="18" cy="19" r="3"/>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-            </svg>
-        </span>
+    <button class="float-btn share-btn" id="shareBtn" style="display:none">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
     </button>
     
     <script>
-        // Create particles
-        const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 15; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 10 + 's';
-            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-            particlesContainer.appendChild(particle);
-        }
-        
         // Open invitation
         document.getElementById('openBtn').addEventListener('click', function() {
-            const openingScreen = document.getElementById('openingScreen');
-            const mainContent = document.getElementById('mainContent');
-            const musicBtn = document.getElementById('musicBtn');
-            const shareBtn = document.getElementById('shareBtn');
+            var opening = document.getElementById('opening');
+            var main = document.getElementById('main');
+            var musicBtn = document.getElementById('musicBtn');
+            var shareBtn = document.getElementById('shareBtn');
             
-            openingScreen.classList.add('hidden');
+            opening.classList.add('hidden');
             
-            setTimeout(() => {
-                openingScreen.style.display = 'none';
-                mainContent.style.display = 'block';
+            setTimeout(function() {
+                opening.style.display = 'none';
+                main.classList.add('show');
                 musicBtn.style.display = 'flex';
                 shareBtn.style.display = 'flex';
-                
-                // Trigger scroll reveal
-                handleScrollReveal();
-            }, 800);
+            }, 600);
         });
-        
-        // Scroll reveal
-        function handleScrollReveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            const windowHeight = window.innerHeight;
-            
-            reveals.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 100;
-                
-                if (elementTop < windowHeight - revealPoint) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', handleScrollReveal, { passive: true });
-        window.addEventListener('resize', handleScrollReveal, { passive: true });
         
         // Countdown
         function updateCountdown() {
-            const weddingDate = new Date('2026-10-10T18:30:00').getTime();
-            const now = new Date().getTime();
-            const diff = weddingDate - now;
-            
-            const countdownEl = document.getElementById('countdown');
+            var weddingDate = new Date('2026-10-10T18:30:00').getTime();
+            var now = new Date().getTime();
+            var diff = weddingDate - now;
+            var el = document.getElementById('countdown');
             
             if (diff <= 0) {
-                countdownEl.innerHTML = '<div style="grid-column: 1/-1; text-align: center;"><p class="font-arabic-display gold-metallic" style="font-size: 1.5rem;">اليوم هو يوم فرحتنا</p></div>';
+                el.innerHTML = '<div style="grid-column:1/-1;text-align:center"><p class="font-display gold-text" style="font-size:1.5rem">اليوم هو يوم فرحتنا</p></div>';
                 return;
             }
             
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
             
-            countdownEl.innerHTML = `
-                <div class="glass-card" style="padding: 1rem; text-align: center;">
-                    <div class="countdown-digit">${String(days).padStart(2, '0')}</div>
-                    <div class="countdown-label">يوم</div>
-                </div>
-                <div class="glass-card" style="padding: 1rem; text-align: center;">
-                    <div class="countdown-digit">${String(hours).padStart(2, '0')}</div>
-                    <div class="countdown-label">ساعة</div>
-                </div>
-                <div class="glass-card" style="padding: 1rem; text-align: center;">
-                    <div class="countdown-digit">${String(minutes).padStart(2, '0')}</div>
-                    <div class="countdown-label">دقيقة</div>
-                </div>
-                <div class="glass-card" style="padding: 1rem; text-align: center;">
-                    <div class="countdown-digit">${String(seconds).padStart(2, '0')}</div>
-                    <div class="countdown-label">ثانية</div>
-                </div>
-            `;
+            el.innerHTML = 
+                '<div class="countdown-item"><div class="countdown-num">' + String(d).padStart(2,'0') + '</div><div class="countdown-label">يوم</div></div>' +
+                '<div class="countdown-item"><div class="countdown-num">' + String(h).padStart(2,'0') + '</div><div class="countdown-label">ساعة</div></div>' +
+                '<div class="countdown-item"><div class="countdown-num">' + String(m).padStart(2,'0') + '</div><div class="countdown-label">دقيقة</div></div>' +
+                '<div class="countdown-item"><div class="countdown-num">' + String(s).padStart(2,'0') + '</div><div class="countdown-label">ثانية</div></div>';
         }
         
         updateCountdown();
         setInterval(updateCountdown, 1000);
         
-        // Music toggle
-        let isMusicPlaying = false;
-        const audio = document.getElementById('weddingMusic');
-        const musicBtn = document.getElementById('musicBtn');
-        const musicIcon = document.getElementById('musicIcon');
+        // Music
+        var audio = document.getElementById('audio');
+        var musicBtn = document.getElementById('musicBtn');
+        var isPlaying = false;
         
         musicBtn.addEventListener('click', function() {
-            if (isMusicPlaying) {
+            if (isPlaying) {
                 audio.pause();
                 musicBtn.classList.remove('playing');
-                musicIcon.innerHTML = `
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M9 18V5l12-2v13"/>
-                        <circle cx="6" cy="18" r="3"/>
-                        <circle cx="18" cy="16" r="3"/>
-                        <line x1="1" y1="1" x2="23" y2="23"/>
-                    </svg>
-                `;
-                isMusicPlaying = false;
+                isPlaying = false;
             } else {
-                audio.play().catch(() => {});
+                audio.play().catch(function(){});
                 musicBtn.classList.add('playing');
-                musicIcon.innerHTML = `
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M9 18V5l12-2v13"/>
-                        <circle cx="6" cy="18" r="3"/>
-                        <circle cx="18" cy="16" r="3"/>
-                    </svg>
-                `;
-                isMusicPlaying = true;
+                isPlaying = true;
             }
         });
         
         // Share
-        document.getElementById('shareBtn').addEventListener('click', async function() {
-            const shareData = {
-                title: 'محمد & F | دعوة زفاف',
-                text: 'يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F ❤️\n10 أكتوبر 2026\nفيلا سعودي - قاعة رويال',
-                url: window.location.href
-            };
+        document.getElementById('shareBtn').addEventListener('click', function() {
+            var text = 'يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F ❤️\n10 أكتوبر 2026\nفيلا سعودي - قاعة رويال';
             
-            try {
-                if (navigator.share) {
-                    await navigator.share(shareData);
-                } else {
-                    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareData.text + '\n' + shareData.url)}`;
-                    window.open(whatsappUrl, '_blank');
-                }
-            } catch (err) {
-                console.log('Share cancelled');
+            if (navigator.share) {
+                navigator.share({
+                    title: 'محمد & F | دعوة زفاف',
+                    text: text,
+                    url: window.location.href
+                }).catch(function(){});
+            } else {
+                window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n' + window.location.href), '_blank');
             }
         });
-        
-
     </script>
 </body>
 </html>
