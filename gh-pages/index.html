@@ -2,823 +2,652 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#071E18">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Mohamed Salama & F | دعوة زفاف</title>
-    <meta name="description" content="دعوة زفاف Mohamed Salama & F - 10/10/2026">
+    
+    <title>محمد & F | دعوة زفاف</title>
+    <meta name="description" content="يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F يوم 10 أكتوبر 2026">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="محمد & F | دعوة زفاف">
+    <meta property="og:description" content="يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F يوم 10 أكتوبر 2026">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23071E18' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='65' font-family='serif' font-size='40' font-weight='bold' fill='%23C6A15B' text-anchor='middle'%3EM%26F%3C/text%3E%3C/svg%3E">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --ivory: #faf6f0; --emerald: #1a3a2a; --gold: #b8941f; --gold-light: #d4bc6a; --charcoal: #2a2a2a; }
-        html, body { 
-            width: 100%; 
-            max-width: 100vw; 
-            overflow-x: hidden;
-            position: relative;
-        }
-        body { 
-            font-family: 'Noto Naskh Arabic', 'Amiri', serif; 
-            background: linear-gradient(180deg, #faf6f0 0%, #f5f0e8 30%, #faf6f0 60%, #f0ebe3 100%); 
-            color: var(--charcoal); 
-            -webkit-font-smoothing: antialiased;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            touch-action: manipulation;
+        
+        :root {
+            --emerald-950: #071E18;
+            --emerald-900: #0B3027;
+            --emerald-800: #0F4A3B;
+            --gold: #C6A15B;
+            --gold-light: #E4C878;
+            --gold-muted: #9E834A;
+            --ivory: #F5F0E6;
+            --font-arabic-display: 'Amiri', serif;
+            --font-arabic-body: 'Noto Naskh Arabic', serif;
+            --font-english-display: 'Cormorant Garamond', serif;
         }
         
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            * {
-                -webkit-user-select: none;
-                user-select: none;
-            }
-        }
-        .font-arabic-display { font-family: 'Amiri', serif; }
-        .font-arabic-body { font-family: 'Noto Naskh Arabic', serif; }
-        .font-english-luxury { font-family: 'Playfair Display', serif; }
-        .gold-text { background: linear-gradient(135deg, #b8941f 0%, #d4bc6a 25%, #b8941f 50%, #8b6914 75%, #d4bc6a 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: goldShimmer 4s ease-in-out infinite; }
-        @keyframes goldShimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(184, 148, 31, 0.3); } 50% { box-shadow: 0 0 25px rgba(184, 148, 31, 0.5); } }
-        
-        /* Disable animations on mobile for better performance */
-        @media (max-width: 768px) {
-            .gold-text {
-                animation: none;
-                background-position: 50% 50%;
-            }
-            .envelope {
-                animation: none;
-            }
-            .wax-seal {
-                animation: none;
-            }
-        }
-        /* Opening Screen Premium */
-        .opening-screen { 
-            position: fixed; 
-            inset: 0; 
-            z-index: 50; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 20px;
-            background: 
-                radial-gradient(ellipse at center, #3d2f1f 0%, #2a1f14 50%, #1a1208 100%),
-                linear-gradient(180deg, #3d2f1f 0%, #1a1208 100%);
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-        
-        /* Decorative pattern overlay */
-        .opening-screen::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(184, 148, 31, 0.03) 20px, rgba(184, 148, 31, 0.03) 40px),
-                repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(184, 148, 31, 0.03) 20px, rgba(184, 148, 31, 0.03) 40px);
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        
-        .opening-screen.hidden { 
-            opacity: 0; 
-            visibility: hidden;
-            pointer-events: none; 
-        }
-        /* Envelope Premium Design */
-        .envelope { 
-            width: 280px; 
-            height: 200px; 
-            background: 
-                linear-gradient(145deg, #f8f4ed 0%, #f0ebe3 30%, #ebe5da 70%, #f5f0e8 100%);
-            border: 3px solid rgba(184, 148, 31, 0.6);
-            border-radius: 12px; 
-            position: relative; 
-            box-shadow: 
-                0 30px 80px rgba(0,0,0,0.4), 
-                0 15px 40px rgba(0,0,0,0.3),
-                0 0 60px rgba(184, 148, 31, 0.2),
-                inset 0 1px 0 rgba(255,255,255,0.8),
-                inset 0 -2px 10px rgba(184, 148, 31, 0.1);
-            animation: float 6s ease-in-out infinite;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-        
-        /* Envelope inner border */
-        .envelope::before {
-            content: '';
-            position: absolute;
-            inset: 8px;
-            border: 2px solid rgba(184, 148, 31, 0.3);
-            border-radius: 8px;
-            pointer-events: none;
-        }
-        
-        /* Envelope decorative pattern */
-        .envelope::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(184, 148, 31, 0.05) 15px, rgba(184, 148, 31, 0.05) 30px),
-                repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(184, 148, 31, 0.05) 15px, rgba(184, 148, 31, 0.05) 30px);
-            pointer-events: none;
-        }
-        
-        /* Mobile envelope size */
-        @media (max-width: 360px) {
-            .envelope {
-                width: 250px;
-                height: 175px;
-            }
-            .wax-seal {
-                width: 80px;
-                height: 80px;
-            }
-            .wax-seal span {
-                font-size: 14px;
-            }
-        }
-        
-        /* Desktop envelope size */
-        @media (min-width: 640px) {
-            .envelope {
-                width: 340px;
-                height: 240px;
-            }
-            .wax-seal {
-                width: 110px;
-                height: 110px;
-            }
-            .wax-seal span {
-                font-size: 20px;
-                letter-spacing: 4px;
-            }
-        }
-        
-        /* Envelope Inner Layer */
-        .envelope::before {
-            content: '';
-            position: absolute;
-            inset: 6px;
-            border: 1px solid rgba(184, 148, 31, 0.2);
-            border-radius: 6px;
-            pointer-events: none;
-        }
-        
-        @media (min-width: 640px) { 
-            .envelope { 
-                width: 340px; 
-                height: 230px; 
-            } 
-        }
-        
-        /* Wax Seal Premium */
-        .wax-seal { 
-            width: 90px; 
-            height: 90px; 
-            border-radius: 50%; 
-            background: 
-                radial-gradient(circle at 30% 30%, #f5ecd0 0%, #d4bc6a 20%, #b8941f 40%, #8b6914 70%, #6b4f0f 100%);
-            box-shadow: 
-                0 8px 25px rgba(0, 0, 0, 0.5),
-                0 4px 12px rgba(0, 0, 0, 0.3),
-                0 0 40px rgba(184, 148, 31, 0.4),
-                inset 0 3px 6px rgba(255, 255, 255, 0.5),
-                inset 0 -3px 6px rgba(0, 0, 0, 0.3);
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            position: absolute; 
-            top: 40%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            animation: pulse-glow 3s ease-in-out infinite;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Seal inner ring */
-        .wax-seal::before {
-            content: '';
-            position: absolute;
-            inset: 6px;
-            border-radius: 50%;
-            border: 2px solid rgba(184, 148, 31, 0.4);
-        }
-        
-        /* Seal outer decorative ring */
-        .wax-seal::after {
-            content: '';
-            position: absolute;
-            inset: 12px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .wax-seal span { 
-            font-family: 'Playfair Display', serif; 
-            color: #2a1f14; 
-            font-weight: bold; 
-            font-size: 16px; 
-            letter-spacing: 3px;
-            z-index: 10;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        
-        @media (min-width: 640px) {
-            .wax-seal {
-                width: 90px;
-                height: 90px;
-            }
-            .wax-seal span {
-                font-size: 16px;
-                letter-spacing: 3px;
-            }
-        }
-        .cta-button { 
-            background: linear-gradient(135deg, #1a3a2a, #2d5a3f); 
-            border: 2px solid #b8941f; 
-            color: #d4bc6a; 
-            padding: 16px 48px; 
-            border-radius: 50px; 
-            font-family: 'Noto Naskh Arabic', serif; 
-            font-size: 1.1rem; 
-            font-weight: 600; 
-            cursor: pointer; 
-            margin-top: 50px; 
-            transition: all 0.3s ease; 
-            box-shadow: 
-                0 6px 25px rgba(184, 148, 31, 0.4),
-                0 0 30px rgba(184, 148, 31, 0.2); 
-            text-decoration: none; 
-            display: inline-block;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            min-height: 48px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Button shimmer effect */
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 188, 106, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        .cta-button:active { 
-            transform: scale(0.95); 
-            box-shadow: 0 2px 10px rgba(184, 148, 31, 0.3); 
-        }
-        @media (hover: hover) {
-            .cta-button:hover { 
-                transform: scale(1.05); 
-                box-shadow: 0 6px 30px rgba(184, 148, 31, 0.4); 
-            }
-        }
-        .cta-button small { 
-            display: block; 
-            font-size: 0.7rem; 
-            margin-top: 4px; 
-            opacity: 0.6; 
-            letter-spacing: 2px; 
-        }
-        .main-content { display: none; min-height: 100vh; width: 100%; }
-        .main-content.visible { display: block; animation: fadeIn 1s ease-out; }
-        section { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            padding: 40px 16px; 
-            min-height: 100vh;
+        html, body {
             width: 100%;
             max-width: 100vw;
             overflow-x: hidden;
+            position: relative;
         }
-        .section-content { max-width: 448px; width: 100%; }
         
-        /* Mobile section padding */
-        @media (max-width: 768px) {
-            section {
-                padding: 30px 12px;
-                min-height: auto;
-            }
+        body {
+            font-family: var(--font-arabic-body);
+            background-color: var(--emerald-950);
+            color: var(--ivory);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            min-height: 100vh;
+            min-height: 100dvh;
         }
-        .bismillah { font-size: 1.5rem; margin-bottom: 32px; line-height: 2; }
-        @media (min-width: 640px) { .bismillah { font-size: 1.875rem; } }
-        .verse-container { position: relative; padding: 32px 24px; margin: 24px 0; border: 1px solid rgba(184, 148, 31, 0.2); border-radius: 16px; }
-        .verse { font-size: 1.125rem; line-height: 2.5; color: #1a3a2a; }
-        @media (min-width: 640px) { .verse { font-size: 1.25rem; } }
-        .verse-source { font-size: 0.875rem; color: #b8941f; margin-top: 16px; opacity: 0.6; }
-        .names-frame { position: relative; padding: 48px 24px; border: 1px solid rgba(184, 148, 31, 0.2); border-radius: 20px; background: rgba(250, 246, 240, 0.6); }
-        .name { font-size: 1.875rem; letter-spacing: 2px; line-height: 1.2; }
-        @media (min-width: 640px) { .name { font-size: 2.5rem; } }
-        .ampersand { font-size: 1.5rem; margin: 20px 0; font-style: italic; }
-        @media (min-width: 640px) { .ampersand { font-size: 1.875rem; } }
-        .details-title { font-size: 1.5rem; margin-bottom: 40px; }
-        @media (min-width: 640px) { .details-title { font-size: 1.875rem; } }
-        .detail-card { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(184, 148, 31, 0.3); border-radius: 16px; padding: 16px 20px; margin-bottom: 12px; display: flex; align-items: center; gap: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
-        .detail-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(184, 148, 31, 0.08); border: 1px solid rgba(184, 148, 31, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .detail-text { text-align: center; flex: 1; }
-        .detail-label { font-size: 0.75rem; opacity: 0.5; margin-bottom: 2px; }
-        .detail-value { font-size: 1.125rem; color: #1a3a2a; font-weight: 500; }
-        .countdown-title { font-size: 1.25rem; margin-bottom: 32px; line-height: 2; }
-        @media (min-width: 640px) { .countdown-title { font-size: 1.5rem; } }
-        .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 384px; margin: 0 auto; }
-        @media (min-width: 640px) { .countdown-grid { gap: 16px; } }
-        .countdown-item { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(184, 148, 31, 0.3); border-radius: 16px; padding: 12px; }
-        @media (min-width: 640px) { .countdown-item { padding: 20px; } }
-        .countdown-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; background: linear-gradient(135deg, #b8941f, #d4bc6a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
-        @media (min-width: 640px) { .countdown-number { font-size: 2.5rem; } }
-        .countdown-label { font-size: 0.85rem; color: #1a3a2a; margin-top: 4px; }
-        .venue-card { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(184, 148, 31, 0.3); border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
-        @media (min-width: 640px) { .venue-card { padding: 40px; } }
-        .venue-name { font-size: 1.875rem; color: #1a3a2a; margin: 16px 0 32px; }
-        @media (min-width: 640px) { .venue-name { font-size: 2.25rem; } }
-        .rsvp-title { font-size: 1.5rem; margin-bottom: 16px; }
-        @media (min-width: 640px) { .rsvp-title { font-size: 1.875rem; } }
-        .rsvp-text { opacity: 0.6; margin-bottom: 40px; line-height: 1.8; }
-        .closing-dua { font-size: 1.25rem; margin-bottom: 32px; line-height: 2; }
-        @media (min-width: 640px) { .closing-dua { font-size: 1.5rem; } }
-        .closing-names { padding: 32px 24px; border: 1px solid rgba(184, 148, 31, 0.1); border-radius: 16px; margin: 32px 0; }
-        .closing-names-text { font-size: 1.5rem; }
-        @media (min-width: 640px) { .closing-names-text { font-size: 1.875rem; } }
-        .divider { display: flex; align-items: center; justify-content: center; margin: 32px 0; opacity: 0.5; }
-        footer { padding: 40px 20px; text-align: center; opacity: 0.3; }
-        footer p { font-size: 0.75rem; letter-spacing: 2px; }
-        .hidden { display: none !important; }
         
-        /* Music Toggle Button */
-        .music-toggle {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1a3a2a, #2d5a3f);
-            border: 2px solid #b8941f;
-            color: #d4bc6a;
+        .bg-layered {
+            background: 
+                radial-gradient(ellipse at 20% 0%, rgba(198, 161, 91, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(198, 161, 91, 0.03) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C6A15B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                radial-gradient(ellipse at center, var(--emerald-900) 0%, var(--emerald-950) 70%),
+                var(--emerald-950);
+        }
+        
+        .gold-metallic {
+            background: linear-gradient(135deg, #8F7137 0%, #C6A15B 25%, #E4C878 50%, #C6A15B 75%, #8F7137 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: goldShimmer 6s ease-in-out infinite;
+        }
+        
+        @keyframes goldShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(198, 161, 91, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        .btn-gold {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-family: var(--font-arabic-body);
+            font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(184, 148, 31, 0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            opacity: 0;
-            pointer-events: none;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(198, 161, 91, 0.1);
+            text-decoration: none;
+            display: inline-block;
         }
         
-        .music-toggle.visible {
-            opacity: 1;
-            pointer-events: auto;
+        .btn-gold:hover, .btn-gold:focus {
+            border-color: var(--gold-light);
+            box-shadow: 0 0 30px rgba(198, 161, 91, 0.25);
+            transform: translateY(-2px);
         }
         
-        .music-toggle:active {
-            transform: scale(0.9);
+        .btn-gold:active {
+            transform: translateY(0) scale(0.98);
         }
         
-        @media (hover: hover) {
-            .music-toggle:hover {
-                transform: scale(1.1);
-            }
-        }
-        
-        .music-toggle.playing {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-        
-        /* Envelope Animations */
-        @keyframes envelopeFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(0.5deg); }
-            50% { transform: translateY(-5px) rotate(0deg); }
-            75% { transform: translateY(-8px) rotate(-0.5deg); }
-        }
-        
-        @keyframes sealPulse {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(184, 148, 31, 0.3), 
-                            inset 0 3px 6px rgba(255, 255, 255, 0.4);
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 40px rgba(184, 148, 31, 0.6), 
-                            inset 0 3px 6px rgba(255, 255, 255, 0.6);
-                transform: translate(-50%, -50%) scale(1.05);
-            }
-        }
-        
-        @keyframes sealOpen {
-            0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 1; }
-            50% { transform: translate(-50%, -50%) scale(1.3) rotate(180deg); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(0) rotate(360deg); opacity: 0; }
-        }
-        
-        @keyframes envelopeOpen {
-            0% { transform: rotateX(0deg); }
-            100% { transform: rotateX(-180deg); }
-        }
-        
-        @keyframes cardSlideUp {
-            0% { transform: translateY(0); opacity: 0.7; }
-            100% { transform: translateY(-150%); opacity: 1; }
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        .envelope {
-            animation: envelopeFloat 6s ease-in-out infinite;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        
-        .envelope.opening {
-            animation: none;
-        }
-        
-        .wax-seal {
-            animation: sealPulse 3s ease-in-out infinite;
-        }
-        
-        .wax-seal.opening {
-            animation: sealOpen 0.8s ease-out forwards;
-        }
-        
-        /* Envelope Flap */
-        .envelope-flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: 
-                linear-gradient(180deg, #ebe5da 0%, #f5f0e8 100%);
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-            transform-origin: top center;
-            transition: transform 1s ease-out;
-            z-index: 10;
-            box-shadow: 
-                inset 0 -2px 10px rgba(0, 0, 0, 0.1),
-                0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Flap decorative border */
-        .envelope-flap::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(184, 148, 31, 0.08) 10px, rgba(184, 148, 31, 0.08) 20px);
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-            pointer-events: none;
-        }
-        
-        /* Flap gold edge */
-        .envelope-flap::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(184, 148, 31, 0.6), transparent);
-            clip-path: polygon(0 0, 100% 0, 50% 100%);
-        }
-        
-        .envelope-flap.open {
-            transform: rotateX(-180deg);
-        }
-        
-        /* Envelope Card */
-        .envelope-card {
-            position: absolute;
-            left: 20px;
-            right: 20px;
-            top: 28%;
-            bottom: 18%;
-            background: 
-                linear-gradient(145deg, #fdf9f3 0%, #faf6f0 50%, #f5f0e8 100%);
-            border: 2px solid rgba(184, 148, 31, 0.4);
-            border-radius: 10px;
-            box-shadow: 
-                0 6px 20px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 1s ease-out;
-            z-index: 5;
-        }
-        
-        /* Card inner border */
-        .envelope-card::before {
-            content: '';
-            position: absolute;
-            inset: 6px;
-            border: 1px solid rgba(184, 148, 31, 0.2);
-            border-radius: 6px;
-            pointer-events: none;
-        }
-        
-        /* Card decorative pattern */
-        .envelope-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(184, 148, 31, 0.03) 10px, rgba(184, 148, 31, 0.03) 20px);
-            border-radius: 10px;
-            pointer-events: none;
-        }
-        
-        .envelope-card.sliding {
-            transform: translateY(-150%);
-        }
-        
-        /* Scroll Animations */
-        .scroll-reveal {
+        .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .scroll-reveal.visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
         
-        .scroll-reveal-left {
+        .particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
             opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: particleFloat linear infinite;
         }
         
-        .scroll-reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
         }
         
-        .scroll-reveal-right {
+        .islamic-arch { position: relative; }
+        
+        .islamic-arch::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 60px;
+            border: 1px solid rgba(198, 161, 91, 0.3);
+            border-radius: 60px 60px 0 0;
+            border-bottom: none;
+        }
+        
+        .gold-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, transparent);
+            opacity: 0.4;
+        }
+        
+        .countdown-digit {
+            font-family: var(--font-english-display);
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1;
+            background: linear-gradient(180deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .countdown-label {
+            font-family: var(--font-arabic-body);
+            font-size: 0.75rem;
+            color: var(--gold-muted);
+            margin-top: 8px;
+        }
+        
+        .monogram-frame {
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgba(198, 161, 91, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 2rem auto;
+        }
+        
+        .monogram-frame::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(198, 161, 91, 0.2);
+            border-radius: 50%;
+        }
+        
+        .monogram-text {
+            font-family: var(--font-english-display);
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+        }
+        
+        .music-btn, .share-btn {
+            position: fixed;
+            bottom: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(7, 30, 24, 0.8);
+            border: 1px solid rgba(198, 161, 91, 0.3);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .music-btn { left: 24px; }
+        .share-btn { right: 24px; }
+        
+        .music-btn:hover, .share-btn:hover {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+        
+        .music-btn.playing {
+            animation: musicPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes musicPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(198, 161, 91, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(198, 161, 91, 0); }
+        }
+        
+        .opening-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--emerald-950);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+        }
+        
+        .opening-screen.hidden {
             opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            visibility: hidden;
+            pointer-events: none;
         }
         
-        .scroll-reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
+        .timeline-item {
+            position: relative;
+            padding-right: 32px;
+            padding-bottom: 32px;
+            border-right: 1px solid rgba(198, 161, 91, 0.2);
         }
         
-        .scroll-reveal-scale {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: 4px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 10px rgba(198, 161, 91, 0.5);
         }
         
-        .scroll-reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
+        .timeline-item:last-child {
+            border-right: none;
+            padding-bottom: 0;
         }
         
-        /* Stagger delays */
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        
-        /* Gold shimmer effect */
-        .gold-shimmer {
-            background: linear-gradient(90deg, transparent, rgba(232, 212, 139, 0.3), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 3s linear infinite;
+        section {
+            padding: clamp(3rem, 8vh, 5rem) 1.5rem;
         }
+        
+        .content-wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .font-arabic-display { font-family: var(--font-arabic-display); }
+        .font-arabic-body { font-family: var(--font-arabic-body); }
+        .font-english-display { font-family: var(--font-english-display); }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--emerald-950); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-muted); border-radius: 2px; }
     </style>
 </head>
 <body>
-    <!-- Audio Element - أغنية الزفاف -->
-    <audio id="weddingMusic" loop preload="auto" crossorigin="anonymous">
+    <audio id="weddingMusic" loop preload="none">
         <source src="./song.mp3" type="audio/mpeg">
     </audio>
     
+    <!-- Opening Screen -->
     <div class="opening-screen" id="openingScreen">
-        <div class="envelope" id="envelope">
-            <div class="envelope-flap" id="envelopeFlap"></div>
-            <div class="envelope-card" id="envelopeCard">
-                <span class="gold-text font-english-luxury" style="font-size: 1.5rem; letter-spacing: 4px; font-weight: 600;">M & F</span>
+        <div id="particles" style="position: fixed; inset: 0; pointer-events: none; overflow: hidden;"></div>
+        
+        <div style="position: relative; z-index: 10; text-align: center; padding: 1.5rem;">
+            <div class="islamic-arch" style="margin-bottom: 2rem;">
+                <div style="width: 96px; height: 96px; margin: 0 auto 1.5rem; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span class="font-arabic-display" style="font-size: 1.875rem;">﷽</span>
+                </div>
             </div>
-            <div class="wax-seal" id="waxSeal"><span>M&F</span></div>
+            
+            <div style="margin-bottom: 2rem;">
+                <h1 class="font-english-display gold-metallic" style="font-size: 3.75rem; font-weight: 300; letter-spacing: 0.1em; margin-bottom: 0.5rem;">M</h1>
+                <p style="color: var(--gold); font-size: 1.5rem; font-weight: 300; margin: 0.5rem 0;">&</p>
+                <h1 class="font-english-display gold-metallic" style="font-size: 3.75rem; font-weight: 300; letter-spacing: 0.1em;">F</h1>
+            </div>
+            
+            <p class="font-arabic-display" style="font-size: 1.25rem; color: var(--ivory); margin-bottom: 0.5rem;">دعوة زفاف</p>
+            <p class="font-arabic-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 2rem;">محمد & F</p>
+            
+            <button id="openBtn" class="btn-gold">
+                <span style="display: block;">افتح الدعوة</span>
+                <span style="display: block; font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.7; font-family: var(--font-english-display); letter-spacing: 0.2em;">OPEN INVITATION</span>
+            </button>
         </div>
-        <button class="cta-button" id="openBtn">
-            افتح الدعوة
-            <small>OPEN INVITATION</small>
-        </button>
-    </div>
-
-    <div class="main-content" id="mainContent">
-        <section>
-            <div class="section-content">
-                <h1 class="bismillah gold-text font-arabic-display scroll-reveal">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h1>
-                <div class="divider scroll-reveal delay-1"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#b8941f" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#b8941f" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#b8941f"/><line x1="110" y1="12" x2="180" y2="12" stroke="#b8941f" stroke-width="0.8"/></svg></div>
-                <div class="verse-container scroll-reveal-scale delay-2">
-                    <p class="verse font-arabic-display">ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة</p>
-                    <p class="verse-source font-arabic-display">سورة الروم - آية ٢١</p>
-                </div>
-                <div class="divider scroll-reveal delay-3"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#b8941f" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#b8941f" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#b8941f"/><line x1="110" y1="12" x2="180" y2="12" stroke="#b8941f" stroke-width="0.8"/></svg></div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-content">
-                <p class="font-arabic-body scroll-reveal" style="margin-bottom: 48px; opacity: 0.8; line-height: 1.8;">بكل حب وسعادة، يسعدنا دعوتكم لمشاركتنا فرحة زفافنا</p>
-                <div class="names-frame scroll-reveal-scale delay-1">
-                    <h2 class="name gold-text font-english-luxury scroll-reveal delay-2">Mohamed Salama</h2>
-                    <div class="ampersand gold-text font-english-luxury scroll-reveal delay-3">&</div>
-                    <h2 class="name gold-text font-english-luxury scroll-reveal delay-4">F</h2>
-                </div>
-                <div class="divider scroll-reveal delay-4"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#b8941f" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#b8941f" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#b8941f"/><line x1="110" y1="12" x2="180" y2="12" stroke="#b8941f" stroke-width="0.8"/></svg></div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-content">
-                <h3 class="details-title gold-text font-arabic-display scroll-reveal">تفاصيل الزفاف</h3>
-                <div class="detail-card scroll-reveal-left delay-1">
-                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8941f" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-                    <div class="detail-text"><p class="detail-label font-arabic-body">التاريخ</p><p class="detail-value font-english-luxury">10 / 10 / 2026</p></div>
-                </div>
-                <div class="detail-card scroll-reveal-right delay-2">
-                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8941f" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-                    <div class="detail-text"><p class="detail-label font-arabic-body">اليوم</p><p class="detail-value font-arabic-body">السبت</p></div>
-                </div>
-                <div class="detail-card scroll-reveal-left delay-3">
-                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
-                    <div class="detail-text"><p class="detail-label font-arabic-body">الوقت</p><p class="detail-value font-english-luxury">6:30 PM – 11:00 PM</p></div>
-                </div>
-                <div class="detail-card scroll-reveal-right delay-4">
-                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <div class="detail-text"><p class="detail-label font-arabic-body">القاعة</p><p class="detail-value font-arabic-body">فيلا سعودي قاعة رويال</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-content">
-                <h3 class="countdown-title gold-text font-arabic-display scroll-reveal">لم يتبقَ على فرحتنا سوى</h3>
-                <div class="countdown-grid scroll-reveal-scale delay-1" id="countdown"></div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-content">
-                <div class="venue-card scroll-reveal-scale">
-                    <div class="detail-icon scroll-reveal delay-1" style="margin: 0 auto 20px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <p class="detail-label font-arabic-body scroll-reveal delay-2">القاعة</p>
-                    <h3 class="venue-name font-arabic-display scroll-reveal delay-3">فيلا سعودي قاعة رويال</h3>
-                    <a href="https://maps.app.goo.gl/ni1EdLp5MiYtDmy4A?g_st=awb" target="_blank" class="cta-button scroll-reveal delay-4" style="margin-top: 0;">الموقع على الخريطة</a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="section-content">
-                <p class="closing-dua font-arabic-display scroll-reveal">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
-                <p class="rsvp-text font-arabic-body scroll-reveal delay-1">نسعد بمشاركتكم فرحتنا</p>
-                <div class="closing-names scroll-reveal-scale delay-2"><h3 class="closing-names-text gold-text font-english-luxury">Mohamed Salama & F</h3></div>
-                <div class="divider scroll-reveal delay-3"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#c9a84c" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#c9a84c"/><line x1="110" y1="12" x2="180" y2="12" stroke="#c9a84c" stroke-width="0.8"/></svg></div>
-            </div>
-        </section>
-
-        <footer><p class="font-english-luxury">With Love • Mohamed & F</p></footer>
     </div>
     
-    <!-- Music Toggle Button -->
-    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="اضغط لتشغيل الموسيقى">
-        <svg id="musicIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 18V5l12-2v13"/>
-            <circle cx="6" cy="18" r="3"/>
-            <circle cx="18" cy="16" r="3"/>
-        </svg>
+    <!-- Main Content -->
+    <div id="mainContent" class="bg-layered" style="display: none; min-height: 100vh; position: relative;">
+        <!-- Bismillah Section -->
+        <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="content-wrapper" style="text-align: center;">
+                <h1 class="font-arabic-display gold-metallic reveal" style="font-size: clamp(1.875rem, 5vw, 2.25rem); margin-bottom: 2rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h1>
+                
+                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
+                    <div class="gold-line" style="width: 8rem;"></div>
+                    <div style="margin: 0 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
+                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="gold-line" style="width: 8rem;"></div>
+                </div>
+                
+                <div class="glass-card reveal" style="padding: 2rem; margin: 2rem 0;">
+                    <p class="font-arabic-display" style="font-size: clamp(1.25rem, 4vw, 1.5rem); color: var(--ivory); line-height: 2; margin-bottom: 1rem;">ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة</p>
+                    <p class="font-arabic-display" style="font-size: 0.875rem; color: var(--gold-muted);">سورة الروم - آية ٢١</p>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
+                    <div class="gold-line" style="width: 8rem;"></div>
+                    <div style="margin: 0 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
+                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="gold-line" style="width: 8rem;"></div>
+                </div>
+                
+                <p class="font-arabic-body reveal" style="font-size: 1.125rem; color: var(--ivory); opacity: 0.9; margin-bottom: 2rem;">بكل حب وسعادة، يسعدنا دعوتكم لمشاركتنا فرحة زفافنا</p>
+            </div>
+        </section>
+        
+        <!-- Couple Names -->
+        <section class="reveal">
+            <div class="content-wrapper" style="text-align: center;">
+                <div class="monogram-frame">
+                    <span class="monogram-text">M & F</span>
+                </div>
+                
+                <div style="margin: 3rem 0;">
+                    <h2 class="font-english-display gold-metallic" style="font-size: clamp(2.25rem, 6vw, 3rem); font-weight: 300; letter-spacing: 0.1em; margin-bottom: 1rem;">Mohamed Salama</h2>
+                    <p style="color: var(--gold); font-size: 1.875rem; margin: 1rem 0;">&</p>
+                    <h2 class="font-english-display gold-metallic" style="font-size: clamp(2.25rem, 6vw, 3rem); font-weight: 300; letter-spacing: 0.1em;">F</h2>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
+                    <div class="gold-line" style="width: 8rem;"></div>
+                    <div style="margin: 0 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
+                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="gold-line" style="width: 8rem;"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Wedding Details -->
+        <section class="reveal">
+            <div class="content-wrapper">
+                <h3 class="font-arabic-display gold-metallic" style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">تفاصيل الزفاف</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="color: var(--gold);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">التاريخ</p>
+                            <p class="font-english-display" style="font-size: 1.25rem; color: var(--ivory);">10 / 10 / 2026</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="color: var(--gold);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">اليوم</p>
+                            <p class="font-arabic-body" style="font-size: 1.25rem; color: var(--ivory);">السبت</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="color: var(--gold);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">الوقت</p>
+                            <p class="font-english-display" style="font-size: 1.25rem; color: var(--ivory);">6:30 PM – 11:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="color: var(--gold);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.875rem; color: var(--gold-muted); margin-bottom: 0.25rem;">القاعة</p>
+                            <p class="font-arabic-body" style="font-size: 1.25rem; color: var(--ivory);">فيلا سعودي - قاعة رويال</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Countdown -->
+        <section class="reveal">
+            <div class="content-wrapper" style="text-align: center;">
+                <h3 class="font-arabic-display gold-metallic" style="font-size: 1.5rem; margin-bottom: 2rem;">لم يتبقَ على فرحتنا سوى</h3>
+                <div id="countdown" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; max-width: 24rem; margin: 0 auto;"></div>
+            </div>
+        </section>
+        
+        <!-- Timeline -->
+        <section class="reveal">
+            <div class="content-wrapper">
+                <h3 class="font-arabic-display gold-metallic" style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">موعدنا</h3>
+                
+                <div style="max-width: 24rem; margin: 0 auto;">
+                    <div class="timeline-item">
+                        <p class="font-english-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 0.25rem;">6:30 PM</p>
+                        <p class="font-arabic-body" style="color: var(--ivory);">استقبال الضيوف</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="font-english-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 0.25rem;">7:00 PM</p>
+                        <p class="font-arabic-body" style="color: var(--ivory);">حفل الزفاف</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="font-english-display" style="font-size: 1.125rem; color: var(--gold-light); margin-bottom: 0.25rem;">11:00 PM</p>
+                        <p class="font-arabic-body" style="color: var(--ivory);">ختام الحفل</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Venue -->
+        <section class="reveal">
+            <div class="content-wrapper" style="text-align: center;">
+                <h3 class="font-arabic-display gold-metallic" style="font-size: 1.5rem; margin-bottom: 2rem;">مكان الاحتفال</h3>
+                
+                <div class="glass-card" style="padding: 2rem; margin-bottom: 1.5rem;">
+                    <div style="color: var(--gold); margin-bottom: 1rem; display: flex; justify-content: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-arabic-display" style="font-size: 1.5rem; color: var(--ivory); margin-bottom: 0.5rem;">فيلا سعودي</h4>
+                    <p class="font-arabic-body" style="color: var(--gold-light);">قاعة رويال</p>
+                </div>
+                
+                <a href="https://maps.app.goo.gl/ni1EdLp5MiYtDmy4A?g_st=awb" target="_blank" rel="noopener noreferrer" class="btn-gold" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <span>الموقع على الخريطة</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15,3 21,3 21,9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Add to Calendar -->
+        <section style="padding: 3rem 1.5rem;" class="reveal">
+            <div class="content-wrapper" style="text-align: center;">
+                <button id="calendarBtn" class="btn-gold" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7,10 12,15 17,10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span>أضف الموعد إلى التقويم</span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- RSVP -->
+        <section class="reveal">
+            <div class="content-wrapper" style="text-align: center;">
+                <h3 class="font-arabic-display gold-metallic" style="font-size: 1.5rem; margin-bottom: 1rem;">يسعدنا حضوركم</h3>
+                <p class="font-arabic-body" style="color: var(--ivory); opacity: 0.8; margin-bottom: 2rem;">نتشرف بمشاركتكم فرحتنا</p>
+                
+                <a href="https://wa.me/+201000000000?text=السلام%20عليكم،%20أؤكد%20حضوري%20لحفل%20زفاف%20Mohamed%20Salama%20%26%20F%20يوم%2010/10/2026." target="_blank" rel="noopener noreferrer" class="btn-gold">تأكيد الحضور</a>
+            </div>
+        </section>
+        
+        <!-- Closing -->
+        <section class="reveal">
+            <div class="content-wrapper" style="text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
+                    <div class="gold-line" style="width: 8rem;"></div>
+                    <div style="margin: 0 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
+                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="gold-line" style="width: 8rem;"></div>
+                </div>
+                
+                <p class="font-arabic-display" style="font-size: 1.25rem; color: var(--ivory); margin-bottom: 1.5rem; line-height: 2;">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
+                
+                <p class="font-arabic-body" style="color: var(--ivory); opacity: 0.8; margin-bottom: 2rem;">نسعد بمشاركتكم فرحتنا</p>
+                
+                <div class="monogram-frame">
+                    <span class="monogram-text">M & F</span>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; margin: 2rem 0;">
+                    <div class="gold-line" style="width: 8rem;"></div>
+                    <div style="margin: 0 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" style="color: var(--gold);">
+                            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="gold-line" style="width: 8rem;"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer style="padding: 2rem; text-align: center; opacity: 0.4;">
+            <p style="font-size: 0.75rem; color: var(--gold-muted); font-family: var(--font-english-display); letter-spacing: 0.15em;">With Love • Mohamed & F</p>
+        </footer>
+    </div>
+    
+    <!-- Music Button -->
+    <button id="musicBtn" class="music-btn" style="display: none;" aria-label="تشغيل الموسيقى">
+        <span style="color: var(--gold);" id="musicIcon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+            </svg>
+        </span>
     </button>
     
-    <!-- Music Notification -->
-    <div id="musicNotification" style="
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%) translateY(-100px);
-        background: linear-gradient(135deg, #1a3a2a, #2d5a3f);
-        border: 2px solid #b8941f;
-        color: #d4bc6a;
-        padding: 12px 24px;
-        border-radius: 50px;
-        font-family: 'Noto Naskh Arabic', serif;
-        font-size: 0.9rem;
-        box-shadow: 0 6px 25px rgba(184, 148, 31, 0.4);
-        z-index: 1001;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        pointer-events: none;
-    ">
-        🎵 اضغط على زر الموسيقى لتشغيل الأغنية
-    </div>
-
+    <!-- Share Button -->
+    <button id="shareBtn" class="share-btn" style="display: none;" aria-label="مشاركة الدعوة">
+        <span style="color: var(--gold);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+        </span>
+    </button>
+    
     <script>
-        // Music state
-        let isMusicPlaying = false;
-        let audioUnlocked = false;
-        
-        // Unlock audio on first user interaction (required for mobile)
-        function unlockAudio() {
-            const audio = document.getElementById('weddingMusic');
-            if (!audioUnlocked) {
-                audio.play().then(() => {
-                    audio.pause();
-                    audioUnlocked = true;
-                    console.log('✅ Audio unlocked');
-                }).catch(e => {
-                    console.log('Audio unlock failed:', e);
-                });
-            }
+        // Create particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
         }
         
-        // Toggle Music Function
-        function toggleMusic() {
-            const audio = document.getElementById('weddingMusic');
-            const musicToggle = document.getElementById('musicToggle');
-            const musicIcon = document.getElementById('musicIcon');
+        // Open invitation
+        document.getElementById('openBtn').addEventListener('click', function() {
+            const openingScreen = document.getElementById('openingScreen');
+            const mainContent = document.getElementById('mainContent');
+            const musicBtn = document.getElementById('musicBtn');
+            const shareBtn = document.getElementById('shareBtn');
             
-            // Unlock audio first (mobile requirement)
-            unlockAudio();
+            openingScreen.classList.add('hidden');
             
-            if (isMusicPlaying) {
-                audio.pause();
-                musicToggle.classList.remove('playing');
-                musicIcon.innerHTML = `
-                    <path d="M9 18V5l12-2v13"/>
-                    <circle cx="6" cy="18" r="3"/>
-                    <circle cx="18" cy="16" r="3"/>
-                    <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"/>
-                `;
-                isMusicPlaying = false;
-            } else {
-                audio.volume = 0.3;
-                audio.play().then(() => {
-                    musicToggle.classList.add('playing');
-                    musicIcon.innerHTML = `
-                        <path d="M9 18V5l12-2v13"/>
-                        <circle cx="6" cy="18" r="3"/>
-                        <circle cx="18" cy="16" r="3"/>
-                    `;
-                    isMusicPlaying = true;
-                }).catch(e => {
-                    console.log('Audio play failed:', e);
-                    // Show notification to user
-                    const notification = document.getElementById('musicNotification');
-                    notification.style.transform = 'translateX(-50%) translateY(0)';
-                    setTimeout(() => {
-                        notification.style.transform = 'translateX(-50%) translateY(-100px)';
-                    }, 3000);
-                });
-            }
-        }
+            setTimeout(() => {
+                openingScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+                musicBtn.style.display = 'flex';
+                shareBtn.style.display = 'flex';
+                
+                // Trigger scroll reveal
+                handleScrollReveal();
+            }, 800);
+        });
         
-        // Scroll Reveal Animation
+        // Scroll reveal
         function handleScrollReveal() {
-            const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+            const reveals = document.querySelectorAll('.reveal');
             const windowHeight = window.innerHeight;
             
             reveals.forEach(element => {
@@ -831,113 +660,126 @@
             });
         }
         
-        // Use passive listeners for better mobile performance
         window.addEventListener('scroll', handleScrollReveal, { passive: true });
         window.addEventListener('resize', handleScrollReveal, { passive: true });
         
-        function openInvitation() {
-            const envelope = document.getElementById('envelope');
-            const waxSeal = document.getElementById('waxSeal');
-            const envelopeFlap = document.getElementById('envelopeFlap');
-            const envelopeCard = document.getElementById('envelopeCard');
-            const openingScreen = document.getElementById('openingScreen');
-            const mainContent = document.getElementById('mainContent');
-            const audio = document.getElementById('weddingMusic');
-            const musicToggle = document.getElementById('musicToggle');
-            
-            // Unlock audio immediately on user interaction (mobile requirement)
-            audio.volume = 0.3;
-            audio.play().then(() => {
-                isMusicPlaying = true;
-                musicToggle.classList.add('playing');
-                console.log('✅ Music started');
-            }).catch(e => {
-                console.log('⚠️ Music autoplay blocked on mobile');
-            });
-            
-            // Step 1: Seal animation
-            waxSeal.style.transition = 'all 0.6s ease';
-            waxSeal.style.transform = 'translate(-50%, -50%) scale(0) rotate(180deg)';
-            waxSeal.style.opacity = '0';
-            
-            // Step 2: Flap opens (after seal)
-            setTimeout(() => {
-                envelopeFlap.classList.add('open');
-            }, 600);
-            
-            // Step 3: Card slides up
-            setTimeout(() => {
-                envelopeCard.classList.add('sliding');
-            }, 1200);
-            
-            // Step 4: Transition to main content
-            setTimeout(() => {
-                openingScreen.classList.add('hidden');
-            }, 1800);
-            
-            // Step 5: Show main content and music button
-            setTimeout(() => {
-                openingScreen.style.display = 'none';
-                mainContent.classList.add('visible');
-                musicToggle.classList.add('visible');
-                
-                // If music didn't start, show notification
-                if (!isMusicPlaying) {
-                    const notification = document.getElementById('musicNotification');
-                    setTimeout(() => {
-                        notification.style.transform = 'translateX(-50%) translateY(0)';
-                        setTimeout(() => {
-                            notification.style.transform = 'translateX(-50%) translateY(-100px)';
-                        }, 3000);
-                    }, 300);
-                }
-                
-                handleScrollReveal();
-            }, 2600);
-        }
-        
-        // Add event listeners for both click and touch
-        document.addEventListener('DOMContentLoaded', function() {
-            const openBtn = document.getElementById('openBtn');
-            const musicToggle = document.getElementById('musicToggle');
-            
-            // Open button - handle both click and touch
-            openBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                openInvitation();
-            });
-            
-            // Music toggle - handle both click and touch
-            musicToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                toggleMusic();
-            });
-            
-            // Initial scroll reveal
-            handleScrollReveal();
-        });
-
+        // Countdown
         function updateCountdown() {
             const weddingDate = new Date('2026-10-10T18:30:00').getTime();
             const now = new Date().getTime();
             const diff = weddingDate - now;
+            
+            const countdownEl = document.getElementById('countdown');
+            
             if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = '<h3 class="gold-text font-arabic-display" style="grid-column: 1/-1;">تم بحمد الله</h3>';
+                countdownEl.innerHTML = '<div style="grid-column: 1/-1; text-align: center;"><p class="font-arabic-display gold-metallic" style="font-size: 1.5rem;">اليوم هو يوم فرحتنا</p></div>';
                 return;
             }
+            
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById('countdown').innerHTML = `
-                <div class="countdown-item"><div class="countdown-number">${String(days).padStart(2, '0')}</div><div class="countdown-label">يوم</div></div>
-                <div class="countdown-item"><div class="countdown-number">${String(hours).padStart(2, '0')}</div><div class="countdown-label">ساعة</div></div>
-                <div class="countdown-item"><div class="countdown-number">${String(minutes).padStart(2, '0')}</div><div class="countdown-label">دقيقة</div></div>
-                <div class="countdown-item"><div class="countdown-number">${String(seconds).padStart(2, '0')}</div><div class="countdown-label">ثانية</div></div>
+            
+            countdownEl.innerHTML = `
+                <div class="glass-card" style="padding: 1rem; text-align: center;">
+                    <div class="countdown-digit">${String(days).padStart(2, '0')}</div>
+                    <div class="countdown-label">يوم</div>
+                </div>
+                <div class="glass-card" style="padding: 1rem; text-align: center;">
+                    <div class="countdown-digit">${String(hours).padStart(2, '0')}</div>
+                    <div class="countdown-label">ساعة</div>
+                </div>
+                <div class="glass-card" style="padding: 1rem; text-align: center;">
+                    <div class="countdown-digit">${String(minutes).padStart(2, '0')}</div>
+                    <div class="countdown-label">دقيقة</div>
+                </div>
+                <div class="glass-card" style="padding: 1rem; text-align: center;">
+                    <div class="countdown-digit">${String(seconds).padStart(2, '0')}</div>
+                    <div class="countdown-label">ثانية</div>
+                </div>
             `;
         }
+        
         updateCountdown();
         setInterval(updateCountdown, 1000);
+        
+        // Music toggle
+        let isMusicPlaying = false;
+        const audio = document.getElementById('weddingMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        
+        musicBtn.addEventListener('click', function() {
+            if (isMusicPlaying) {
+                audio.pause();
+                musicBtn.classList.remove('playing');
+                musicIcon.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 18V5l12-2v13"/>
+                        <circle cx="6" cy="18" r="3"/>
+                        <circle cx="18" cy="16" r="3"/>
+                        <line x1="1" y1="1" x2="23" y2="23"/>
+                    </svg>
+                `;
+                isMusicPlaying = false;
+            } else {
+                audio.play().catch(() => {});
+                musicBtn.classList.add('playing');
+                musicIcon.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 18V5l12-2v13"/>
+                        <circle cx="6" cy="18" r="3"/>
+                        <circle cx="18" cy="16" r="3"/>
+                    </svg>
+                `;
+                isMusicPlaying = true;
+            }
+        });
+        
+        // Share
+        document.getElementById('shareBtn').addEventListener('click', async function() {
+            const shareData = {
+                title: 'محمد & F | دعوة زفاف',
+                text: 'يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F ❤️\n10 أكتوبر 2026\nفيلا سعودي - قاعة رويال',
+                url: window.location.href
+            };
+            
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareData.text + '\n' + shareData.url)}`;
+                    window.open(whatsappUrl, '_blank');
+                }
+            } catch (err) {
+                console.log('Share cancelled');
+            }
+        });
+        
+        // Add to calendar
+        document.getElementById('calendarBtn').addEventListener('click', function() {
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'BEGIN:VEVENT',
+                'DTSTART:20261010T183000',
+                'DTEND:20261010T230000',
+                'SUMMARY:زفاف Mohamed Salama & F',
+                'LOCATION:فيلا سعودي - قاعة رويال',
+                'DESCRIPTION:يسعدنا دعوتكم لمشاركتنا فرحة زفافنا',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\n');
+            
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'wedding-invitation.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     </script>
 </body>
 </html>
