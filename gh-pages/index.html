@@ -79,6 +79,47 @@
         footer p { font-size: 0.75rem; letter-spacing: 2px; }
         .hidden { display: none !important; }
         
+        /* Music Toggle Button */
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a3a2a, #2d5a3f);
+            border: 2px solid #c9a84c;
+            color: #e8d48b;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .music-toggle.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .music-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(201, 168, 76, 0.5);
+        }
+        
+        .music-toggle.playing svg {
+            animation: musicPulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
         /* Envelope Animations */
         @keyframes envelopeFloat {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -247,9 +288,10 @@
     </style>
 </head>
 <body>
-    <!-- Audio Element -->
-    <audio id="weddingMusic" loop>
-        <source src="https://www.islamcan.com/audio/quran/suras/001.mp3" type="audio/mpeg">
+    <!-- Audio Element - سورة الروم (آية الزواج) - بصوت مشاري العفاسي -->
+    <audio id="weddingMusic" loop preload="auto">
+        <source src="https://server11.mp3quran.net/qtm/030.mp3" type="audio/mpeg">
+        <source src="https://server6.mp3quran.net/afs/030.mp3" type="audio/mpeg">
     </audio>
     
     <div class="opening-screen" id="openingScreen">
@@ -342,8 +384,48 @@
 
         <footer><p class="font-english-luxury">With Love • Mohamed & F</p></footer>
     </div>
+    
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="تشغيل/إيقاف الموسيقى">
+        <svg id="musicIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+        </svg>
+    </button>
 
     <script>
+        // Music state
+        let isMusicPlaying = false;
+        
+        // Toggle Music Function
+        function toggleMusic() {
+            const audio = document.getElementById('weddingMusic');
+            const musicToggle = document.getElementById('musicToggle');
+            const musicIcon = document.getElementById('musicIcon');
+            
+            if (isMusicPlaying) {
+                audio.pause();
+                musicToggle.classList.remove('playing');
+                musicIcon.innerHTML = `
+                    <path d="M9 18V5l12-2v13"/>
+                    <circle cx="6" cy="18" r="3"/>
+                    <circle cx="18" cy="16" r="3"/>
+                    <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"/>
+                `;
+                isMusicPlaying = false;
+            } else {
+                audio.play().catch(e => console.log('Audio play failed:', e));
+                musicToggle.classList.add('playing');
+                musicIcon.innerHTML = `
+                    <path d="M9 18V5l12-2v13"/>
+                    <circle cx="6" cy="18" r="3"/>
+                    <circle cx="18" cy="16" r="3"/>
+                `;
+                isMusicPlaying = true;
+            }
+        }
+        
         // Scroll Reveal Animation
         function handleScrollReveal() {
             const reveals = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
@@ -370,6 +452,7 @@
             const openingScreen = document.getElementById('openingScreen');
             const mainContent = document.getElementById('mainContent');
             const audio = document.getElementById('weddingMusic');
+            const musicToggle = document.getElementById('musicToggle');
             
             // Step 1: Seal animation
             envelope.classList.add('opening');
@@ -388,7 +471,10 @@
             // Step 4: Start music
             setTimeout(() => {
                 audio.volume = 0.3;
-                audio.play().catch(e => console.log('Audio play failed:', e));
+                audio.play().then(() => {
+                    isMusicPlaying = true;
+                    musicToggle.classList.add('playing');
+                }).catch(e => console.log('Audio play failed:', e));
             }, 2000);
             
             // Step 5: Transition to main content
@@ -396,10 +482,11 @@
                 openingScreen.classList.add('hidden');
             }, 2400);
             
-            // Step 6: Show main content
+            // Step 6: Show main content and music button
             setTimeout(() => {
                 openingScreen.style.display = 'none';
                 mainContent.classList.add('visible');
+                musicToggle.classList.add('visible');
                 handleScrollReveal();
             }, 3400);
         }
