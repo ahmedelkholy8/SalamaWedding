@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --ivory: #faf6f0; --emerald: #1a3a2a; --gold: #c9a84c; --gold-light: #e8d48b; --charcoal: #2a2a2a; }
+        :root { --ivory: #faf6f0; --emerald: #1a3a2a; --gold: #b8941f; --gold-light: #d4bc6a; --charcoal: #2a2a2a; }
         html, body { 
             width: 100%; 
             max-width: 100vw; 
@@ -40,11 +40,11 @@
         .font-arabic-display { font-family: 'Amiri', serif; }
         .font-arabic-body { font-family: 'Noto Naskh Arabic', serif; }
         .font-english-luxury { font-family: 'Playfair Display', serif; }
-        .gold-text { background: linear-gradient(135deg, #c9a84c 0%, #e8d48b 25%, #c9a84c 50%, #a07d2e 75%, #e8d48b 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: goldShimmer 4s ease-in-out infinite; }
+        .gold-text { background: linear-gradient(135deg, #b8941f 0%, #d4bc6a 25%, #b8941f 50%, #8b6914 75%, #d4bc6a 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: goldShimmer 4s ease-in-out infinite; }
         @keyframes goldShimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(201, 168, 76, 0.3); } 50% { box-shadow: 0 0 25px rgba(201, 168, 76, 0.5); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(184, 148, 31, 0.3); } 50% { box-shadow: 0 0 25px rgba(184, 148, 31, 0.5); } }
         
         /* Disable animations on mobile for better performance */
         @media (max-width: 768px) {
@@ -84,7 +84,7 @@
             height: 180px; 
             background: 
                 linear-gradient(145deg, #f8f4ed 0%, #f0ebe3 30%, #ebe5da 70%, #f5f0e8 100%);
-            border: 2px solid rgba(201, 168, 76, 0.4);
+            border: 2px solid rgba(184, 148, 31, 0.4);
             border-radius: 10px; 
             position: relative; 
             box-shadow: 
@@ -109,7 +109,7 @@
             content: '';
             position: absolute;
             inset: 6px;
-            border: 1px solid rgba(201, 168, 76, 0.2);
+            border: 1px solid rgba(184, 148, 31, 0.2);
             border-radius: 6px;
             pointer-events: none;
         }
@@ -126,7 +126,7 @@
             width: 75px; 
             height: 75px; 
             border-radius: 50%; 
-            background: radial-gradient(circle at 30% 30%, #f0e4b8, #c9a84c 40%, #a07d2e 80%);
+            background: radial-gradient(circle at 30% 30%, #f0e4b8, #b8941f 40%, #8b6914 80%);
             box-shadow: 
                 0 4px 15px rgba(0, 0, 0, 0.3),
                 inset 0 2px 4px rgba(255, 255, 255, 0.4);
@@ -162,8 +162,8 @@
         }
         .cta-button { 
             background: linear-gradient(135deg, #1a3a2a, #2d5a3f); 
-            border: 2px solid #c9a84c; 
-            color: #e8d48b; 
+            border: 2px solid #b8941f; 
+            color: #d4bc6a; 
             padding: 16px 48px; 
             border-radius: 50px; 
             font-family: 'Noto Naskh Arabic', serif; 
@@ -172,7 +172,7 @@
             cursor: pointer; 
             margin-top: 40px; 
             transition: all 0.3s ease; 
-            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2); 
+            box-shadow: 0 4px 20px rgba(184, 148, 31, 0.2); 
             text-decoration: none; 
             display: inline-block;
             -webkit-tap-highlight-color: transparent;
@@ -181,12 +181,12 @@
         }
         .cta-button:active { 
             transform: scale(0.95); 
-            box-shadow: 0 2px 10px rgba(201, 168, 76, 0.3); 
+            box-shadow: 0 2px 10px rgba(184, 148, 31, 0.3); 
         }
         @media (hover: hover) {
             .cta-button:hover { 
                 transform: scale(1.05); 
-                box-shadow: 0 6px 30px rgba(201, 168, 76, 0.4); 
+                box-shadow: 0 6px 30px rgba(184, 148, 31, 0.4); 
             }
         }
         .cta-button small { 
@@ -221,19 +221,19 @@
         }
         .bismillah { font-size: 1.5rem; margin-bottom: 32px; line-height: 2; }
         @media (min-width: 640px) { .bismillah { font-size: 1.875rem; } }
-        .verse-container { position: relative; padding: 32px 24px; margin: 24px 0; border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 16px; }
+        .verse-container { position: relative; padding: 32px 24px; margin: 24px 0; border: 1px solid rgba(184, 148, 31, 0.2); border-radius: 16px; }
         .verse { font-size: 1.125rem; line-height: 2.5; color: #1a3a2a; }
         @media (min-width: 640px) { .verse { font-size: 1.25rem; } }
-        .verse-source { font-size: 0.875rem; color: #c9a84c; margin-top: 16px; opacity: 0.6; }
-        .names-frame { position: relative; padding: 48px 24px; border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 20px; background: rgba(250, 246, 240, 0.6); }
+        .verse-source { font-size: 0.875rem; color: #b8941f; margin-top: 16px; opacity: 0.6; }
+        .names-frame { position: relative; padding: 48px 24px; border: 1px solid rgba(184, 148, 31, 0.2); border-radius: 20px; background: rgba(250, 246, 240, 0.6); }
         .name { font-size: 1.875rem; letter-spacing: 2px; line-height: 1.2; }
         @media (min-width: 640px) { .name { font-size: 2.5rem; } }
         .ampersand { font-size: 1.5rem; margin: 20px 0; font-style: italic; }
         @media (min-width: 640px) { .ampersand { font-size: 1.875rem; } }
         .details-title { font-size: 1.5rem; margin-bottom: 40px; }
         @media (min-width: 640px) { .details-title { font-size: 1.875rem; } }
-        .detail-card { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(201, 168, 76, 0.3); border-radius: 16px; padding: 16px 20px; margin-bottom: 12px; display: flex; align-items: center; gap: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
-        .detail-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(201, 168, 76, 0.08); border: 1px solid rgba(201, 168, 76, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .detail-card { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(184, 148, 31, 0.3); border-radius: 16px; padding: 16px 20px; margin-bottom: 12px; display: flex; align-items: center; gap: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
+        .detail-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(184, 148, 31, 0.08); border: 1px solid rgba(184, 148, 31, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .detail-text { text-align: center; flex: 1; }
         .detail-label { font-size: 0.75rem; opacity: 0.5; margin-bottom: 2px; }
         .detail-value { font-size: 1.125rem; color: #1a3a2a; font-weight: 500; }
@@ -241,12 +241,12 @@
         @media (min-width: 640px) { .countdown-title { font-size: 1.5rem; } }
         .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 384px; margin: 0 auto; }
         @media (min-width: 640px) { .countdown-grid { gap: 16px; } }
-        .countdown-item { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(201, 168, 76, 0.3); border-radius: 16px; padding: 12px; }
+        .countdown-item { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(184, 148, 31, 0.3); border-radius: 16px; padding: 12px; }
         @media (min-width: 640px) { .countdown-item { padding: 20px; } }
-        .countdown-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; background: linear-gradient(135deg, #c9a84c, #e8d48b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+        .countdown-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; background: linear-gradient(135deg, #b8941f, #d4bc6a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
         @media (min-width: 640px) { .countdown-number { font-size: 2.5rem; } }
         .countdown-label { font-size: 0.85rem; color: #1a3a2a; margin-top: 4px; }
-        .venue-card { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(201, 168, 76, 0.3); border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
+        .venue-card { background: rgba(250, 246, 240, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(184, 148, 31, 0.3); border-radius: 16px; padding: 32px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); }
         @media (min-width: 640px) { .venue-card { padding: 40px; } }
         .venue-name { font-size: 1.875rem; color: #1a3a2a; margin: 16px 0 32px; }
         @media (min-width: 640px) { .venue-name { font-size: 2.25rem; } }
@@ -255,7 +255,7 @@
         .rsvp-text { opacity: 0.6; margin-bottom: 40px; line-height: 1.8; }
         .closing-dua { font-size: 1.25rem; margin-bottom: 32px; line-height: 2; }
         @media (min-width: 640px) { .closing-dua { font-size: 1.5rem; } }
-        .closing-names { padding: 32px 24px; border: 1px solid rgba(201, 168, 76, 0.1); border-radius: 16px; margin: 32px 0; }
+        .closing-names { padding: 32px 24px; border: 1px solid rgba(184, 148, 31, 0.1); border-radius: 16px; margin: 32px 0; }
         .closing-names-text { font-size: 1.5rem; }
         @media (min-width: 640px) { .closing-names-text { font-size: 1.875rem; } }
         .divider { display: flex; align-items: center; justify-content: center; margin: 32px 0; opacity: 0.5; }
@@ -272,13 +272,13 @@
             height: 56px;
             border-radius: 50%;
             background: linear-gradient(135deg, #1a3a2a, #2d5a3f);
-            border: 2px solid #c9a84c;
-            color: #e8d48b;
+            border: 2px solid #b8941f;
+            color: #d4bc6a;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+            box-shadow: 0 4px 20px rgba(184, 148, 31, 0.3);
             z-index: 1000;
             transition: all 0.3s ease;
             opacity: 0;
@@ -316,12 +316,12 @@
         
         @keyframes sealPulse {
             0%, 100% { 
-                box-shadow: 0 0 20px rgba(201, 168, 76, 0.3), 
+                box-shadow: 0 0 20px rgba(184, 148, 31, 0.3), 
                             inset 0 3px 6px rgba(255, 255, 255, 0.4);
                 transform: translate(-50%, -50%) scale(1);
             }
             50% { 
-                box-shadow: 0 0 40px rgba(201, 168, 76, 0.6), 
+                box-shadow: 0 0 40px rgba(184, 148, 31, 0.6), 
                             inset 0 3px 6px rgba(255, 255, 255, 0.6);
                 transform: translate(-50%, -50%) scale(1.05);
             }
@@ -402,7 +402,7 @@
             top: 25%;
             bottom: 15%;
             background: linear-gradient(145deg, #fdf9f3, #faf6f0);
-            border: 1px solid rgba(201, 168, 76, 0.2);
+            border: 1px solid rgba(184, 148, 31, 0.2);
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             display: flex;
@@ -499,12 +499,12 @@
         <section>
             <div class="section-content">
                 <h1 class="bismillah gold-text font-arabic-display scroll-reveal">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h1>
-                <div class="divider scroll-reveal delay-1"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#c9a84c" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#c9a84c"/><line x1="110" y1="12" x2="180" y2="12" stroke="#c9a84c" stroke-width="0.8"/></svg></div>
+                <div class="divider scroll-reveal delay-1"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#b8941f" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#b8941f" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#b8941f"/><line x1="110" y1="12" x2="180" y2="12" stroke="#b8941f" stroke-width="0.8"/></svg></div>
                 <div class="verse-container scroll-reveal-scale delay-2">
                     <p class="verse font-arabic-display">ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة</p>
                     <p class="verse-source font-arabic-display">سورة الروم - آية ٢١</p>
                 </div>
-                <div class="divider scroll-reveal delay-3"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#c9a84c" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#c9a84c"/><line x1="110" y1="12" x2="180" y2="12" stroke="#c9a84c" stroke-width="0.8"/></svg></div>
+                <div class="divider scroll-reveal delay-3"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#b8941f" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#b8941f" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#b8941f"/><line x1="110" y1="12" x2="180" y2="12" stroke="#b8941f" stroke-width="0.8"/></svg></div>
             </div>
         </section>
 
@@ -516,7 +516,7 @@
                     <div class="ampersand gold-text font-english-luxury scroll-reveal delay-3">&</div>
                     <h2 class="name gold-text font-english-luxury scroll-reveal delay-4">F</h2>
                 </div>
-                <div class="divider scroll-reveal delay-4"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#c9a84c" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#c9a84c"/><line x1="110" y1="12" x2="180" y2="12" stroke="#c9a84c" stroke-width="0.8"/></svg></div>
+                <div class="divider scroll-reveal delay-4"><svg width="180" height="24" viewBox="0 0 180 24"><line x1="0" y1="12" x2="70" y2="12" stroke="#b8941f" stroke-width="0.8"/><circle cx="90" cy="12" r="3" fill="none" stroke="#b8941f" stroke-width="1"/><circle cx="90" cy="12" r="1.5" fill="#b8941f"/><line x1="110" y1="12" x2="180" y2="12" stroke="#b8941f" stroke-width="0.8"/></svg></div>
             </div>
         </section>
 
@@ -524,11 +524,11 @@
             <div class="section-content">
                 <h3 class="details-title gold-text font-arabic-display scroll-reveal">تفاصيل الزفاف</h3>
                 <div class="detail-card scroll-reveal-left delay-1">
-                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8941f" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
                     <div class="detail-text"><p class="detail-label font-arabic-body">التاريخ</p><p class="detail-value font-english-luxury">10 / 10 / 2026</p></div>
                 </div>
                 <div class="detail-card scroll-reveal-right delay-2">
-                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <div class="detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8941f" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
                     <div class="detail-text"><p class="detail-label font-arabic-body">اليوم</p><p class="detail-value font-arabic-body">السبت</p></div>
                 </div>
                 <div class="detail-card scroll-reveal-left delay-3">
@@ -588,13 +588,13 @@
         left: 50%;
         transform: translateX(-50%) translateY(-100px);
         background: linear-gradient(135deg, #1a3a2a, #2d5a3f);
-        border: 2px solid #c9a84c;
-        color: #e8d48b;
+        border: 2px solid #b8941f;
+        color: #d4bc6a;
         padding: 12px 24px;
         border-radius: 50px;
         font-family: 'Noto Naskh Arabic', serif;
         font-size: 0.9rem;
-        box-shadow: 0 6px 25px rgba(201, 168, 76, 0.4);
+        box-shadow: 0 6px 25px rgba(184, 148, 31, 0.4);
         z-index: 1001;
         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
