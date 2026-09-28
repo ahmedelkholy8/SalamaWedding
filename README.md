@@ -98,25 +98,20 @@ SalamaWedding/
 
 ## 🎵 الموسيقى
 
-### الأغنية الحالية:
-- **السورة**: سورة الروم (تحتوي على آية الزواج)
-- **القارئ**: مشاري العفاسي
-- **المصدر**: mp3quran.net
+### الأغنية:
+- **الملف**: `song.mpeg` (يوجد في مجلد `gh-pages/`)
 - **مستوى الصوت**: 30%
+- **التشغيل**: تلقائي عند فتح الدعوة
 
-### تغيير الأغنية:
-افتح ملف `gh-pages/index.html` وعدّل الرابط:
+### إضافة/تغيير الأغنية:
+1. ضع ملف الأغنية في مجلد `gh-pages/` باسم `song.mpeg`
+2. أو عدّل الرابط في `gh-pages/index.html`:
 
 ```html
 <audio id="weddingMusic" loop preload="auto">
-    <source src="YOUR_AUDIO_URL.mp3" type="audio/mpeg">
+    <source src="./YOUR_SONG_FILE.mp3" type="audio/mpeg">
 </audio>
 ```
-
-### روابط مقترحة:
-- سورة الروم (مشاري العفاسي): `https://server11.mp3quran.net/qtm/030.mp3`
-- سورة الفاتحة (عبد الباسط): `https://server6.mp3quran.net/afs/001.mp3`
-- سورة يس (مشاري العفاسي): `https://server11.mp3quran.net/qtm/036.mp3`
 
 ---
 
