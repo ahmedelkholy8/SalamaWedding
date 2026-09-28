@@ -22,12 +22,138 @@
         @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.3); } 50% { box-shadow: 0 0 40px rgba(201, 168, 76, 0.6); } }
         .animate-float { animation: float 6s ease-in-out infinite; }
         .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
-        .opening-screen { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(180deg, #faf6f0 0%, #f0ebe3 50%, #faf6f0 100%); transition: all 1s ease; }
-        .opening-screen.hidden { opacity: 0; transform: scale(1.05); pointer-events: none; }
-        .envelope { width: 280px; height: 195px; background: linear-gradient(145deg, #f5f0e8, #ebe5da); border: 2px solid rgba(201, 168, 76, 0.3); border-radius: 8px; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.12), 0 15px 35px rgba(0,0,0,0.08); animation: float 6s ease-in-out infinite; }
-        @media (min-width: 640px) { .envelope { width: 340px; height: 235px; } }
-        .wax-seal { width: 85px; height: 85px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #f0e4b8, #c9a84c 30%, #a07d2e 60%, #7a5c1e 100%); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 3px 6px rgba(255, 255, 255, 0.4); display: flex; align-items: center; justify-content: center; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); animation: pulse-glow 3s ease-in-out infinite; }
-        .wax-seal span { font-family: 'Playfair Display', serif; color: #1a3a2a; font-weight: bold; font-size: 14px; letter-spacing: 2px; }
+        /* Opening Screen Premium */
+        .opening-screen { 
+            position: fixed; 
+            inset: 0; 
+            z-index: 50; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(201, 168, 76, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(26, 58, 42, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, #faf6f0 0%, #f5f0e8 30%, #f0ebe3 70%, #faf6f0 100%);
+            transition: all 1s ease;
+        }
+        
+        /* Islamic Pattern Background */
+        .opening-screen::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(201, 168, 76, 0.02) 30px, rgba(201, 168, 76, 0.02) 60px),
+                repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(26, 58, 42, 0.02) 30px, rgba(26, 58, 42, 0.02) 60px);
+            opacity: 0.5;
+        }
+        
+        .opening-screen.hidden { 
+            opacity: 0; 
+            transform: scale(1.05); 
+            pointer-events: none; 
+        }
+        /* Envelope Premium Design */
+        .envelope { 
+            width: 300px; 
+            height: 210px; 
+            background: 
+                linear-gradient(145deg, #f8f4ed 0%, #f0ebe3 30%, #ebe5da 70%, #f5f0e8 100%),
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(201, 168, 76, 0.02) 10px, rgba(201, 168, 76, 0.02) 20px);
+            border: 3px solid transparent;
+            border-image: linear-gradient(135deg, #c9a84c, #e8d48b, #c9a84c, #a07d2e) 1;
+            border-radius: 12px; 
+            position: relative; 
+            box-shadow: 
+                0 40px 100px rgba(0,0,0,0.15), 
+                0 20px 50px rgba(0,0,0,0.1),
+                0 0 0 1px rgba(201, 168, 76, 0.1),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+            animation: float 6s ease-in-out infinite;
+            overflow: hidden;
+        }
+        
+        /* Envelope Inner Layer */
+        .envelope::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 2px solid rgba(201, 168, 76, 0.2);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        
+        /* Islamic Pattern Overlay */
+        .envelope::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201, 168, 76, 0.03) 20px, rgba(201, 168, 76, 0.03) 40px),
+                repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(26, 58, 42, 0.02) 20px, rgba(26, 58, 42, 0.02) 40px);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        @media (min-width: 640px) { 
+            .envelope { 
+                width: 380px; 
+                height: 260px; 
+            } 
+        }
+        
+        /* Wax Seal Premium */
+        .wax-seal { 
+            width: 95px; 
+            height: 95px; 
+            border-radius: 50%; 
+            background: 
+                radial-gradient(circle at 25% 25%, #f5ecd0 0%, #e8d48b 20%, #c9a84c 40%, #a07d2e 70%, #7a5c1e 100%);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.35),
+                0 4px 10px rgba(0, 0, 0, 0.2),
+                inset 0 4px 8px rgba(255, 255, 255, 0.5),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(201, 168, 76, 0.4);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: absolute; 
+            top: 40%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            animation: pulse-glow 3s ease-in-out infinite;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Seal Inner Ring */
+        .wax-seal::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Seal Outer Ring */
+        .wax-seal::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border-radius: 50%;
+            border: 1px solid rgba(160, 125, 46, 0.3);
+        }
+        
+        .wax-seal span { 
+            font-family: 'Playfair Display', serif; 
+            color: #1a3a2a; 
+            font-weight: bold; 
+            font-size: 16px; 
+            letter-spacing: 3px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
         .cta-button { background: linear-gradient(135deg, #1a3a2a, #2d5a3f); border: 2px solid #c9a84c; color: #e8d48b; padding: 14px 40px; border-radius: 50px; font-family: 'Noto Naskh Arabic', serif; font-size: 1.1rem; font-weight: 600; cursor: pointer; margin-top: 56px; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2); text-decoration: none; display: inline-block; }
         .cta-button:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(201, 168, 76, 0.4); }
         .cta-button small { display: block; font-size: 0.75rem; margin-top: 6px; opacity: 0.6; font-family: 'Cormorant Garamond', serif; letter-spacing: 3px; }
@@ -84,17 +210,19 @@
             position: fixed;
             bottom: 20px;
             left: 20px;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: linear-gradient(135deg, #1a3a2a, #2d5a3f);
-            border: 2px solid #c9a84c;
+            border: 3px solid #c9a84c;
             color: #e8d48b;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+            box-shadow: 
+                0 6px 25px rgba(201, 168, 76, 0.4),
+                0 0 0 0 rgba(201, 168, 76, 0.7);
             z-index: 1000;
             transition: all 0.3s ease;
             opacity: 0;
@@ -104,20 +232,55 @@
         .music-toggle.visible {
             opacity: 1;
             pointer-events: auto;
+            animation: fadeInScale 0.5s ease-out;
         }
         
         .music-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(201, 168, 76, 0.5);
+            transform: scale(1.15);
+            box-shadow: 
+                0 8px 35px rgba(201, 168, 76, 0.6),
+                0 0 0 10px rgba(201, 168, 76, 0.1);
+        }
+        
+        .music-toggle:active {
+            transform: scale(0.95);
+        }
+        
+        .music-toggle.playing {
+            animation: musicButtonPulse 2s ease-in-out infinite;
         }
         
         .music-toggle.playing svg {
             animation: musicPulse 1s ease-in-out infinite;
         }
         
+        @keyframes musicButtonPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 6px 25px rgba(201, 168, 76, 0.4),
+                    0 0 0 0 rgba(201, 168, 76, 0.7);
+            }
+            50% { 
+                box-shadow: 
+                    0 6px 25px rgba(201, 168, 76, 0.6),
+                    0 0 0 15px rgba(201, 168, 76, 0);
+            }
+        }
+        
         @keyframes musicPulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        @keyframes fadeInScale {
+            from { 
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
         }
         
         /* Envelope Animations */
@@ -190,38 +353,89 @@
             animation: sealOpen 0.8s ease-out forwards;
         }
         
+        /* Envelope Flap Premium */
         .envelope-flap {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 48%;
-            background: linear-gradient(180deg, #ebe5da 0%, #f5f0e8 100%);
+            height: 50%;
+            background: 
+                linear-gradient(180deg, #f5f0e8 0%, #ebe5da 50%, #e5dfd3 100%);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             transform-origin: top center;
             transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 10;
+            box-shadow: 
+                inset 0 -2px 10px rgba(0,0,0,0.05),
+                0 2px 5px rgba(0,0,0,0.03);
+        }
+        
+        /* Flap Pattern */
+        .envelope-flap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(201, 168, 76, 0.04) 15px, rgba(201, 168, 76, 0.04) 30px);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+        
+        /* Flap Gold Edge */
+        .envelope-flap::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.5), transparent);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
         }
         
         .envelope-flap.open {
             animation: envelopeOpen 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
         
+        /* Envelope Card Premium */
         .envelope-card {
             position: absolute;
-            left: 20px;
-            right: 20px;
-            top: 25%;
-            bottom: 15%;
-            background: linear-gradient(145deg, #fdf9f3, #faf6f0);
-            border: 1px solid rgba(201, 168, 76, 0.2);
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            left: 25px;
+            right: 25px;
+            top: 28%;
+            bottom: 18%;
+            background: 
+                linear-gradient(145deg, #fdf9f3 0%, #faf6f0 50%, #f5f0e8 100%);
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            border-radius: 10px;
+            box-shadow: 
+                0 6px 25px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 1s ease-out;
             z-index: 5;
+        }
+        
+        /* Card Inner Border */
+        .envelope-card::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 6px;
+        }
+        
+        /* Card Pattern */
+        .envelope-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(201, 168, 76, 0.02) 10px, rgba(201, 168, 76, 0.02) 20px);
+            border-radius: 10px;
+            opacity: 0.5;
         }
         
         .envelope-card.sliding {
@@ -289,15 +503,39 @@
 </head>
 <body>
     <!-- Audio Element - أغنية الزفاف -->
-    <audio id="weddingMusic" loop preload="auto">
+    <audio id="weddingMusic" loop preload="auto" crossorigin="anonymous">
         <source src="./song.mpeg" type="audio/mpeg">
+        <source src="./song.mp3" type="audio/mpeg">
+        <source src="./song.wav" type="audio/wav">
     </audio>
     
     <div class="opening-screen" id="openingScreen">
+        <!-- Decorative Corner Ornaments -->
+        <svg style="position: absolute; top: 20px; left: 20px; opacity: 0.3;" width="60" height="60" viewBox="0 0 60 60">
+            <path d="M5 5 Q5 30 30 30 Q5 30 5 55" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <path d="M10 10 Q10 25 25 25" fill="none" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+        </svg>
+        <svg style="position: absolute; top: 20px; right: 20px; opacity: 0.3; transform: rotate(90deg);" width="60" height="60" viewBox="0 0 60 60">
+            <path d="M5 5 Q5 30 30 30 Q5 30 5 55" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <path d="M10 10 Q10 25 25 25" fill="none" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+        </svg>
+        <svg style="position: absolute; bottom: 20px; left: 20px; opacity: 0.3; transform: rotate(-90deg);" width="60" height="60" viewBox="0 0 60 60">
+            <path d="M5 5 Q5 30 30 30 Q5 30 5 55" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <path d="M10 10 Q10 25 25 25" fill="none" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+        </svg>
+        <svg style="position: absolute; bottom: 20px; right: 20px; opacity: 0.3; transform: rotate(180deg);" width="60" height="60" viewBox="0 0 60 60">
+            <path d="M5 5 Q5 30 30 30 Q5 30 5 55" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <path d="M10 10 Q10 25 25 25" fill="none" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="5" cy="5" r="3" fill="#c9a84c"/>
+        </svg>
+        
         <div class="envelope" id="envelope">
             <div class="envelope-flap" id="envelopeFlap"></div>
             <div class="envelope-card" id="envelopeCard">
-                <span class="gold-text font-english-luxury" style="font-size: 1.25rem; letter-spacing: 3px;">M & F</span>
+                <span class="gold-text font-english-luxury" style="font-size: 1.5rem; letter-spacing: 4px; position: relative; z-index: 10;">M & F</span>
             </div>
             <div class="wax-seal" id="waxSeal"><span>M&F</span></div>
         </div>
@@ -385,13 +623,34 @@
     </div>
     
     <!-- Music Toggle Button -->
-    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="تشغيل/إيقاف الموسيقى">
-        <svg id="musicIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="اضغط لتشغيل الموسيقى">
+        <svg id="musicIcon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 18V5l12-2v13"/>
             <circle cx="6" cy="18" r="3"/>
             <circle cx="18" cy="16" r="3"/>
         </svg>
     </button>
+    
+    <!-- Music Notification -->
+    <div id="musicNotification" style="
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100px);
+        background: linear-gradient(135deg, #1a3a2a, #2d5a3f);
+        border: 2px solid #c9a84c;
+        color: #e8d48b;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-family: 'Noto Naskh Arabic', serif;
+        font-size: 0.9rem;
+        box-shadow: 0 6px 25px rgba(201, 168, 76, 0.4);
+        z-index: 1001;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+    ">
+        🎵 اضغط على زر الموسيقى لتشغيل الأغنية
+    </div>
 
     <script>
         // Music state
@@ -467,13 +726,29 @@
                 envelopeCard.classList.add('sliding');
             }, 1600);
             
-            // Step 4: Start music
+            // Step 4: Try to start music (with user interaction)
             setTimeout(() => {
                 audio.volume = 0.3;
-                audio.play().then(() => {
-                    isMusicPlaying = true;
-                    musicToggle.classList.add('playing');
-                }).catch(e => console.log('Audio play failed:', e));
+                const playPromise = audio.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        // Music started successfully
+                        isMusicPlaying = true;
+                        musicToggle.classList.add('playing');
+                        console.log('✅ Music started successfully');
+                    }).catch(error => {
+                        // Auto-play blocked - show manual play button
+                        console.log('⚠️ Auto-play blocked. User must click music button.');
+                        console.log('Error:', error);
+                        
+                        // Show music button immediately so user can click it
+                        musicToggle.classList.add('visible');
+                        
+                        // Add visual indicator that music needs to be started
+                        musicToggle.style.animation = 'pulse-glow 1s ease-in-out infinite';
+                    });
+                }
             }, 2000);
             
             // Step 5: Transition to main content
@@ -485,7 +760,23 @@
             setTimeout(() => {
                 openingScreen.style.display = 'none';
                 mainContent.classList.add('visible');
+                
+                // Always show music button
                 musicToggle.classList.add('visible');
+                
+                // If music didn't start, show notification
+                if (!isMusicPlaying) {
+                    const notification = document.getElementById('musicNotification');
+                    setTimeout(() => {
+                        notification.style.transform = 'translateX(-50%) translateY(0)';
+                        
+                        // Hide notification after 4 seconds
+                        setTimeout(() => {
+                            notification.style.transform = 'translateX(-50%) translateY(-100px)';
+                        }, 4000);
+                    }, 500);
+                }
+                
                 handleScrollReveal();
             }, 3400);
         }
