@@ -500,6 +500,15 @@
             var main = document.getElementById('main');
             var musicBtn = document.getElementById('musicBtn');
             var shareBtn = document.getElementById('shareBtn');
+            var audio = document.getElementById('audio');
+            
+            // Start music automatically
+            audio.play().then(function() {
+                musicBtn.classList.add('playing');
+                isPlaying = true;
+            }).catch(function(e) {
+                console.log('Auto-play failed:', e);
+            });
             
             opening.classList.add('hidden');
             
@@ -542,6 +551,9 @@
         var audio = document.getElementById('audio');
         var musicBtn = document.getElementById('musicBtn');
         var isPlaying = false;
+        
+        // Preload audio
+        audio.load();
         
         musicBtn.addEventListener('click', function() {
             if (isPlaying) {
