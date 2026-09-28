@@ -98,18 +98,38 @@ SalamaWedding/
 
 ## 🎵 الموسيقى
 
-### الأغنية:
-- **الملف**: `song.mpeg` (يوجد في مجلد `gh-pages/`)
-- **مستوى الصوت**: 30%
-- **التشغيل**: تلقائي عند فتح الدعوة
+### ⚠️ مهم جداً - إضافة ملف الصوت:
+
+المتصفحات الحديثة تمنع التشغيل التلقائي للصوت. لذلك:
+
+1. **ضع ملف الصوت** في مجلد `gh-pages/` بأحد الأسماء التالية:
+   - `song.mpeg`
+   - `song.mp3`
+   - `song.wav`
+
+2. **المستخدم سيضغط** على زر الموسيقى (🎵) في أسفل الشاشة لتشغيل الأغنية
+
+3. **ستظهر رسالة** "🎵 اضغط على زر الموسيقى لتشغيل الأغنية" إذا لم يعمل الصوت تلقائياً
 
 ### إضافة/تغيير الأغنية:
-1. ضع ملف الأغنية في مجلد `gh-pages/` باسم `song.mpeg`
-2. أو عدّل الرابط في `gh-pages/index.html`:
+
+```bash
+# ضع الملف في مجلد gh-pages/
+cp /path/to/your/song.mp3 gh-pages/song.mp3
+
+# ثم ارفع إلى GitHub
+git add gh-pages/song.mp3
+git commit -m "Add wedding song"
+git push origin main
+```
+
+### تعديل الرابط (اختياري):
+
+افتح `gh-pages/index.html` وعدّل:
 
 ```html
 <audio id="weddingMusic" loop preload="auto">
-    <source src="./YOUR_SONG_FILE.mp3" type="audio/mpeg">
+    <source src="./song.mp3" type="audio/mpeg">
 </audio>
 ```
 
