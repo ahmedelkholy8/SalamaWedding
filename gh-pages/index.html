@@ -526,29 +526,7 @@
             </div>
         </section>
         
-        <!-- Add to Calendar -->
-        <section style="padding: 3rem 1.5rem;" class="reveal">
-            <div class="content-wrapper" style="text-align: center;">
-                <button id="calendarBtn" class="btn-gold" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7,10 12,15 17,10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    <span>أضف الموعد إلى التقويم</span>
-                </button>
-            </div>
-        </section>
-        
-        <!-- RSVP -->
-        <section class="reveal">
-            <div class="content-wrapper" style="text-align: center;">
-                <h3 class="font-arabic-display gold-metallic" style="font-size: 1.5rem; margin-bottom: 1rem;">يسعدنا حضوركم</h3>
-                <p class="font-arabic-body" style="color: var(--ivory); opacity: 0.8; margin-bottom: 2rem;">نتشرف بمشاركتكم فرحتنا</p>
-                
-                <a href="https://wa.me/+201000000000?text=السلام%20عليكم،%20أؤكد%20حضوري%20لحفل%20زفاف%20Mohamed%20Salama%20%26%20F%20يوم%2010/10/2026." target="_blank" rel="noopener noreferrer" class="btn-gold">تأكيد الحضور</a>
-            </div>
-        </section>
+
         
         <!-- Closing -->
         <section class="reveal">
@@ -757,29 +735,7 @@
             }
         });
         
-        // Add to calendar
-        document.getElementById('calendarBtn').addEventListener('click', function() {
-            const icsContent = [
-                'BEGIN:VCALENDAR',
-                'VERSION:2.0',
-                'BEGIN:VEVENT',
-                'DTSTART:20261010T183000',
-                'DTEND:20261010T230000',
-                'SUMMARY:زفاف Mohamed Salama & F',
-                'LOCATION:فيلا سعودي - قاعة رويال',
-                'DESCRIPTION:يسعدنا دعوتكم لمشاركتنا فرحة زفافنا',
-                'END:VEVENT',
-                'END:VCALENDAR'
-            ].join('\n');
-            
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'wedding-invitation.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
+
     </script>
 </body>
 </html>
