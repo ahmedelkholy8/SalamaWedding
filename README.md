@@ -60,7 +60,8 @@ SalamaWedding/
 
 - ✨ تصميم فاخر لدعوة زفاف إسلامية
 - 🎬 حركة سينمائية متقدمة لفتح الظرف (فتح الغطاء، انزلاق البطاقة، اختفاء الختم)
-- 🎵 موسيقى خلفية تعمل تلقائياً عند فتح الدعوة
+- 🎵 موسيقى خلفية (سورة الروم بصوت مشاري العفاسي) تعمل تلقائياً عند فتح الدعوة
+- 🎚️ زر تحكم في الموسيقى (تشغيل/إيقاف) في أسفل الشاشة
 - 📱 تصميم mobile-first (360px - 430px)
 - 🌙 دعم كامل للغة العربية (RTL)
 - ⏰ عد تنازلي حي حتى موعد الزفاف
@@ -92,6 +93,30 @@ SalamaWedding/
 <h2 class="name gold-text font-english-luxury">Mohamed Salama</h2>
 <h2 class="name gold-text font-english-luxury">F</h2>
 ```
+
+---
+
+## 🎵 الموسيقى
+
+### الأغنية الحالية:
+- **السورة**: سورة الروم (تحتوي على آية الزواج)
+- **القارئ**: مشاري العفاسي
+- **المصدر**: mp3quran.net
+- **مستوى الصوت**: 30%
+
+### تغيير الأغنية:
+افتح ملف `gh-pages/index.html` وعدّل الرابط:
+
+```html
+<audio id="weddingMusic" loop preload="auto">
+    <source src="YOUR_AUDIO_URL.mp3" type="audio/mpeg">
+</audio>
+```
+
+### روابط مقترحة:
+- سورة الروم (مشاري العفاسي): `https://server11.mp3quran.net/qtm/030.mp3`
+- سورة الفاتحة (عبد الباسط): `https://server6.mp3quran.net/afs/001.mp3`
+- سورة يس (مشاري العفاسي): `https://server11.mp3quran.net/qtm/036.mp3`
 
 ---
 
