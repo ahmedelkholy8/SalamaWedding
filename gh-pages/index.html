@@ -30,7 +30,28 @@
             -webkit-font-smoothing:antialiased;
         }
         
+        body.en{
+            font-family:Georgia,'Times New Roman',serif;
+            direction:ltr;
+            text-align:left;
+        }
+        
         .container{max-width:500px;margin:0 auto;padding:0 20px}
+        
+        /* Language Toggle */
+        .lang-toggle{
+            position:fixed;top:20px;right:20px;z-index:1001;
+            background:rgba(7,30,24,0.9);
+            border:1px solid rgba(198,161,91,0.3);
+            color:#E4C878;
+            padding:8px 16px;
+            border-radius:50px;
+            font-size:0.85rem;
+            cursor:pointer;
+            transition:all 0.3s ease;
+            backdrop-filter:blur(10px);
+        }
+        .lang-toggle:active{transform:scale(0.95)}
         
         /* Opening Screen */
         .opening{
@@ -77,6 +98,7 @@
             cursor:pointer;
             transition:all 0.3s ease;
         }
+        .en .btn{font-family:Georgia,serif}
         .btn:active{transform:scale(0.95)}
         .btn small{display:block;font-size:0.7rem;margin-top:4px;opacity:0.7;letter-spacing:0.15em}
         
@@ -91,7 +113,9 @@
         .gold-muted{color:#9E834A}
         
         .font-display{font-family:'Amiri',serif}
+        .en .font-display{font-family:Georgia,serif}
         .font-body{font-family:'Noto Naskh Arabic',serif}
+        .en .font-body{font-family:Georgia,serif}
         .font-english{font-family:Georgia,serif}
         
         /* Cards */
@@ -150,6 +174,7 @@
             display:flex;align-items:center;gap:16px;
             text-align:right;
         }
+        .en .detail-card{text-align:left}
         .detail-card .icon{color:#C6A15B;flex-shrink:0}
         .detail-card .info{flex:1}
         .detail-card .label{font-size:0.85rem;color:#9E834A;margin-bottom:4px}
@@ -180,10 +205,15 @@
         
         /* Timeline */
         .timeline{max-width:300px;margin:0 auto;text-align:right}
+        .en .timeline{text-align:left}
         .timeline-item{
             position:relative;
             padding-right:30px;padding-bottom:25px;
             border-right:1px solid rgba(198,161,91,0.2);
+        }
+        .en .timeline-item{
+            padding-right:0;padding-left:30px;
+            border-right:none;border-left:1px solid rgba(198,161,91,0.2);
         }
         .timeline-item::before{
             content:'';position:absolute;
@@ -193,7 +223,11 @@
             background:#C6A15B;
             box-shadow:0 0 8px rgba(198,161,91,0.5);
         }
+        .en .timeline-item::before{
+            right:auto;left:-5px;
+        }
         .timeline-item:last-child{border-right:none;padding-bottom:0}
+        .en .timeline-item:last-child{border-left:none}
         .timeline-item .time{
             font-family:Georgia,serif;
             font-size:1.1rem;color:#E4C878;
@@ -205,6 +239,7 @@
         .venue-card{text-align:center}
         .venue-card .icon{color:#C6A15B;margin-bottom:15px}
         .venue-card h4{font-family:'Amiri',serif;font-size:1.5rem;color:#F5F0E6;margin-bottom:8px}
+        .en .venue-card h4{font-family:Georgia,serif}
         .venue-card p{color:#E4C878}
         
         /* Buttons */
@@ -220,6 +255,7 @@
             text-decoration:none;
             transition:all 0.3s ease;
         }
+        .en .btn-link{font-family:Georgia,serif}
         .btn-link:active{transform:scale(0.95)}
         
         /* Floating Buttons */
@@ -236,6 +272,7 @@
         .float-btn:active{transform:scale(0.9)}
         .music-btn{left:20px}
         .share-btn{right:20px}
+        .en .share-btn{left:20px;right:auto}
         .float-btn svg{color:#C6A15B}
         
         .music-btn.playing{animation:pulse 2s ease-in-out infinite}
@@ -262,6 +299,9 @@
     </style>
 </head>
 <body>
+    <!-- Language Toggle -->
+    <button class="lang-toggle" id="langToggle">EN</button>
+    
     <audio id="audio" loop preload="none">
         <source src="./song.mp3" type="audio/mpeg">
     </audio>
@@ -270,7 +310,7 @@
     <div class="opening" id="opening">
         <div class="opening-content">
             <div class="bismillah-circle">
-                <span>﷽</span>
+                <span id="bismillahText">﷽</span>
             </div>
             
             <div class="initials">
@@ -280,13 +320,13 @@
             </div>
             
             <div class="opening-text">
-                <p class="title">دعوة زفاف</p>
-                <p class="names">محمد & F</p>
+                <p class="title" id="invitationTitle">دعوة زفاف</p>
+                <p class="names" id="invitationNames">محمد & F</p>
             </div>
             
             <button class="btn" id="openBtn">
-                افتح الدعوة
-                <small>OPEN INVITATION</small>
+                <span id="openBtnText">افتح الدعوة</span>
+                <small id="openBtnSubtext">OPEN INVITATION</small>
             </button>
         </div>
     </div>
@@ -297,7 +337,7 @@
             
             <!-- Bismillah -->
             <section>
-                <h1 class="font-display gold-text" style="font-size:1.8rem;margin-bottom:30px">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h1>
+                <h1 class="font-display gold-text" id="bismillah" style="font-size:1.8rem;margin-bottom:30px">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h1>
                 
                 <div class="divider">
                     <div class="line"></div>
@@ -306,8 +346,8 @@
                 </div>
                 
                 <div class="card">
-                    <p class="font-display" style="font-size:1.2rem;line-height:2;margin-bottom:12px">ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة</p>
-                    <p class="font-display gold-muted" style="font-size:0.9rem">سورة الروم - آية ٢١</p>
+                    <p class="font-display" id="verse" style="font-size:1.2rem;line-height:2;margin-bottom:12px">ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة</p>
+                    <p class="font-display gold-muted" id="verseRef" style="font-size:0.9rem">سورة الروم - آية ٢١</p>
                 </div>
                 
                 <div class="divider">
@@ -316,7 +356,7 @@
                     <div class="line"></div>
                 </div>
                 
-                <p class="font-body" style="font-size:1.1rem;opacity:0.9;margin-top:20px">بكل حب وسعادة، يسعدنا دعوتكم لمشاركتنا فرحة زفافنا</p>
+                <p class="font-body" id="invitationMsg" style="font-size:1.1rem;opacity:0.9;margin-top:20px">بكل حب وسعادة، يسعدنا دعوتكم لمشاركتنا فرحة زفافنا</p>
             </section>
             
             <!-- Couple Names -->
@@ -338,7 +378,7 @@
             
             <!-- Wedding Details -->
             <section>
-                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">تفاصيل الزفاف</h3>
+                <h3 class="font-display gold-text" id="detailsTitle" style="font-size:1.5rem;margin-bottom:30px">تفاصيل الزفاف</h3>
                 
                 <div class="card detail-card">
                     <div class="icon">
@@ -350,7 +390,7 @@
                         </svg>
                     </div>
                     <div class="info">
-                        <p class="label">التاريخ</p>
+                        <p class="label" id="dateLabel">التاريخ</p>
                         <p class="value value-en">10 / 10 / 2026</p>
                     </div>
                 </div>
@@ -363,8 +403,8 @@
                         </svg>
                     </div>
                     <div class="info">
-                        <p class="label">اليوم</p>
-                        <p class="value">السبت</p>
+                        <p class="label" id="dayLabel">اليوم</p>
+                        <p class="value" id="dayValue">السبت</p>
                     </div>
                 </div>
                 
@@ -376,7 +416,7 @@
                         </svg>
                     </div>
                     <div class="info">
-                        <p class="label">الوقت</p>
+                        <p class="label" id="timeLabel">الوقت</p>
                         <p class="value value-en">6:30 PM – 11:00 PM</p>
                     </div>
                 </div>
@@ -389,41 +429,41 @@
                         </svg>
                     </div>
                     <div class="info">
-                        <p class="label">القاعة</p>
-                        <p class="value">فيلا سعودي - قاعة رويال</p>
+                        <p class="label" id="venueLabel">القاعة</p>
+                        <p class="value" id="venueValue">فيلا سعودي - قاعة رويال</p>
                     </div>
                 </div>
             </section>
             
             <!-- Countdown -->
             <section>
-                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">لم يتبقَ على فرحتنا سوى</h3>
+                <h3 class="font-display gold-text" id="countdownTitle" style="font-size:1.5rem;margin-bottom:30px">لم يتبقَ على فرحتنا سوى</h3>
                 <div class="countdown-grid" id="countdown"></div>
             </section>
             
             <!-- Timeline -->
             <section>
-                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">موعدنا</h3>
+                <h3 class="font-display gold-text" id="timelineTitle" style="font-size:1.5rem;margin-bottom:30px">موعدنا</h3>
                 
-                <div class="timeline">
+                <div class="timeline" id="timeline">
                     <div class="timeline-item">
                         <p class="time">6:30 PM</p>
-                        <p class="event">استقبال الضيوف</p>
+                        <p class="event" id="event1">استقبال الضيوف</p>
                     </div>
                     <div class="timeline-item">
                         <p class="time">7:00 PM</p>
-                        <p class="event">حفل الزفاف</p>
+                        <p class="event" id="event2">حفل الزفاف</p>
                     </div>
                     <div class="timeline-item">
                         <p class="time">11:00 PM</p>
-                        <p class="event">ختام الحفل</p>
+                        <p class="event" id="event3">ختام الحفل</p>
                     </div>
                 </div>
             </section>
             
             <!-- Venue -->
             <section>
-                <h3 class="font-display gold-text" style="font-size:1.5rem;margin-bottom:30px">مكان الاحتفال</h3>
+                <h3 class="font-display gold-text" id="venueTitle" style="font-size:1.5rem;margin-bottom:30px">مكان الاحتفال</h3>
                 
                 <div class="card venue-card">
                     <div class="icon">
@@ -432,12 +472,12 @@
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <h4>فيلا سعودي</h4>
-                    <p>قاعة رويال</p>
+                    <h4 id="venueName">فيلا سعودي</h4>
+                    <p id="venueHall">قاعة رويال</p>
                 </div>
                 
                 <a href="https://maps.app.goo.gl/ni1EdLp5MiYtDmy4A?g_st=awb" target="_blank" rel="noopener" class="btn-link" style="margin-top:20px">
-                    <span>الموقع على الخريطة</span>
+                    <span id="mapBtn">الموقع على الخريطة</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                         <polyline points="15,3 21,3 21,9"/>
@@ -454,9 +494,9 @@
                     <div class="line"></div>
                 </div>
                 
-                <p class="font-display" style="font-size:1.2rem;line-height:2;margin-bottom:20px">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
+                <p class="font-display" id="closingDua" style="font-size:1.2rem;line-height:2;margin-bottom:20px">بارك الله لهما وبارك عليهما وجمع بينهما في خير</p>
                 
-                <p class="font-body" style="opacity:0.8;margin-bottom:30px">نسعد بمشاركتكم فرحتنا</p>
+                <p class="font-body" id="closingMsg" style="opacity:0.8;margin-bottom:30px">نسعد بمشاركتكم فرحتنا</p>
                 
                 <div class="monogram"><span>M & F</span></div>
                 
@@ -468,7 +508,7 @@
             </section>
             
             <footer>
-                <p>With Love • Mohamed & F</p>
+                <p id="footerText">With Love • Mohamed & F</p>
             </footer>
         </div>
     </div>
@@ -494,6 +534,138 @@
     </button>
     
     <script>
+        // Translations
+        const translations = {
+            ar: {
+                bismillah: 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',
+                invitationTitle: 'دعوة زفاف',
+                invitationNames: 'محمد & F',
+                openBtnText: 'افتح الدعوة',
+                openBtnSubtext: 'OPEN INVITATION',
+                verse: 'ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها وجعل بينكم مودة ورحمة',
+                verseRef: 'سورة الروم - آية ٢١',
+                invitationMsg: 'بكل حب وسعادة، يسعدنا دعوتكم لمشاركتنا فرحة زفافنا',
+                detailsTitle: 'تفاصيل الزفاف',
+                dateLabel: 'التاريخ',
+                dayLabel: 'اليوم',
+                dayValue: 'السبت',
+                timeLabel: 'الوقت',
+                venueLabel: 'القاعة',
+                venueValue: 'فيلا سعودي - قاعة رويال',
+                countdownTitle: 'لم يتبقَ على فرحتنا سوى',
+                timelineTitle: 'موعدنا',
+                event1: 'استقبال الضيوف',
+                event2: 'حفل الزفاف',
+                event3: 'ختام الحفل',
+                venueTitle: 'مكان الاحتفال',
+                venueName: 'فيلا سعودي',
+                venueHall: 'قاعة رويال',
+                mapBtn: 'الموقع على الخريطة',
+                closingDua: 'بارك الله لهما وبارك عليهما وجمع بينهما في خير',
+                closingMsg: 'نسعد بمشاركتكم فرحتنا',
+                footerText: 'مع الحب • محمد & F',
+                langToggle: 'EN',
+                countdownLabels: ['يوم', 'ساعة', 'دقيقة', 'ثانية'],
+                countdownDone: 'اليوم هو يوم فرحتنا'
+            },
+            en: {
+                bismillah: 'In the name of Allah, the Most Gracious, the Most Merciful',
+                invitationTitle: 'Wedding Invitation',
+                invitationNames: 'Mohamed & F',
+                openBtnText: 'Open Invitation',
+                openBtnSubtext: 'افتح الدعوة',
+                verse: 'And among His Signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between you.',
+                verseRef: 'Surah Ar-Rum - Verse 21',
+                invitationMsg: 'With love and happiness, we invite you to share in our wedding celebration',
+                detailsTitle: 'Wedding Details',
+                dateLabel: 'Date',
+                dayLabel: 'Day',
+                dayValue: 'Saturday',
+                timeLabel: 'Time',
+                venueLabel: 'Venue',
+                venueValue: 'Saudi Villa - Royal Hall',
+                countdownTitle: 'Counting down to our special day',
+                timelineTitle: 'Our Schedule',
+                event1: 'Guest Reception',
+                event2: 'Wedding Ceremony',
+                event3: 'Event Conclusion',
+                venueTitle: 'Venue Location',
+                venueName: 'Saudi Villa',
+                venueHall: 'Royal Hall',
+                mapBtn: 'View on Map',
+                closingDua: 'May Allah bless them and bring them together in goodness',
+                closingMsg: 'We are honored by your presence',
+                footerText: 'With Love • Mohamed & F',
+                langToggle: 'ع',
+                countdownLabels: ['Days', 'Hours', 'Minutes', 'Seconds'],
+                countdownDone: 'Today is our special day'
+            }
+        };
+        
+        // Current language
+        let currentLang = localStorage.getItem('lang') || 'ar';
+        
+        // Update language
+        function updateLanguage() {
+            const t = translations[currentLang];
+            const html = document.documentElement;
+            
+            // Update direction and lang attribute
+            if (currentLang === 'ar') {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                document.body.classList.remove('en');
+            } else {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                document.body.classList.add('en');
+            }
+            
+            // Update all text elements
+            document.getElementById('bismillahText').textContent = currentLang === 'ar' ? '﷽' : '☪';
+            document.getElementById('invitationTitle').textContent = t.invitationTitle;
+            document.getElementById('invitationNames').textContent = t.invitationNames;
+            document.getElementById('openBtnText').textContent = t.openBtnText;
+            document.getElementById('openBtnSubtext').textContent = t.openBtnSubtext;
+            document.getElementById('bismillah').textContent = t.bismillah;
+            document.getElementById('verse').textContent = t.verse;
+            document.getElementById('verseRef').textContent = t.verseRef;
+            document.getElementById('invitationMsg').textContent = t.invitationMsg;
+            document.getElementById('detailsTitle').textContent = t.detailsTitle;
+            document.getElementById('dateLabel').textContent = t.dateLabel;
+            document.getElementById('dayLabel').textContent = t.dayLabel;
+            document.getElementById('dayValue').textContent = t.dayValue;
+            document.getElementById('timeLabel').textContent = t.timeLabel;
+            document.getElementById('venueLabel').textContent = t.venueLabel;
+            document.getElementById('venueValue').textContent = t.venueValue;
+            document.getElementById('countdownTitle').textContent = t.countdownTitle;
+            document.getElementById('timelineTitle').textContent = t.timelineTitle;
+            document.getElementById('event1').textContent = t.event1;
+            document.getElementById('event2').textContent = t.event2;
+            document.getElementById('event3').textContent = t.event3;
+            document.getElementById('venueTitle').textContent = t.venueTitle;
+            document.getElementById('venueName').textContent = t.venueName;
+            document.getElementById('venueHall').textContent = t.venueHall;
+            document.getElementById('mapBtn').textContent = t.mapBtn;
+            document.getElementById('closingDua').textContent = t.closingDua;
+            document.getElementById('closingMsg').textContent = t.closingMsg;
+            document.getElementById('footerText').textContent = t.footerText;
+            document.getElementById('langToggle').textContent = t.langToggle;
+            
+            // Update countdown labels
+            updateCountdown();
+        }
+        
+        // Toggle language
+        document.getElementById('langToggle').addEventListener('click', function() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('lang', currentLang);
+            updateLanguage();
+        });
+        
+        // Initialize language
+        updateLanguage();
+        
         // Open invitation
         document.getElementById('openBtn').addEventListener('click', function() {
             var opening = document.getElementById('opening');
@@ -526,9 +698,10 @@
             var now = new Date().getTime();
             var diff = weddingDate - now;
             var el = document.getElementById('countdown');
+            var t = translations[currentLang];
             
             if (diff <= 0) {
-                el.innerHTML = '<div style="grid-column:1/-1;text-align:center"><p class="font-display gold-text" style="font-size:1.5rem">اليوم هو يوم فرحتنا</p></div>';
+                el.innerHTML = '<div style="grid-column:1/-1;text-align:center"><p class="font-display gold-text" style="font-size:1.5rem">' + t.countdownDone + '</p></div>';
                 return;
             }
             
@@ -538,10 +711,10 @@
             var s = Math.floor((diff % 60000) / 1000);
             
             el.innerHTML = 
-                '<div class="countdown-item"><div class="countdown-num">' + String(d).padStart(2,'0') + '</div><div class="countdown-label">يوم</div></div>' +
-                '<div class="countdown-item"><div class="countdown-num">' + String(h).padStart(2,'0') + '</div><div class="countdown-label">ساعة</div></div>' +
-                '<div class="countdown-item"><div class="countdown-num">' + String(m).padStart(2,'0') + '</div><div class="countdown-label">دقيقة</div></div>' +
-                '<div class="countdown-item"><div class="countdown-num">' + String(s).padStart(2,'0') + '</div><div class="countdown-label">ثانية</div></div>';
+                '<div class="countdown-item"><div class="countdown-num">' + String(d).padStart(2,'0') + '</div><div class="countdown-label">' + t.countdownLabels[0] + '</div></div>' +
+                '<div class="countdown-item"><div class="countdown-num">' + String(h).padStart(2,'0') + '</div><div class="countdown-label">' + t.countdownLabels[1] + '</div></div>' +
+                '<div class="countdown-item"><div class="countdown-num">' + String(m).padStart(2,'0') + '</div><div class="countdown-label">' + t.countdownLabels[2] + '</div></div>' +
+                '<div class="countdown-item"><div class="countdown-num">' + String(s).padStart(2,'0') + '</div><div class="countdown-label">' + t.countdownLabels[3] + '</div></div>';
         }
         
         updateCountdown();
@@ -569,11 +742,13 @@
         
         // Share
         document.getElementById('shareBtn').addEventListener('click', function() {
-            var text = 'يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F ❤️\n10 أكتوبر 2026\nفيلا سعودي - قاعة رويال';
+            var text = currentLang === 'ar' 
+                ? 'يسعدنا دعوتكم لمشاركتنا فرحة زفاف Mohamed Salama & F ❤️\n10 أكتوبر 2026\nفيلا سعودي - قاعة رويال'
+                : 'We invite you to share in our wedding celebration ❤️\nOctober 10, 2026\nSaudi Villa - Royal Hall';
             
             if (navigator.share) {
                 navigator.share({
-                    title: 'محمد & F | دعوة زفاف',
+                    title: currentLang === 'ar' ? 'محمد & F | دعوة زفاف' : 'Mohamed & F | Wedding Invitation',
                     text: text,
                     url: window.location.href
                 }).catch(function(){});
